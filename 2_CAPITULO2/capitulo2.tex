@@ -1,0 +1,776 @@
+\chapter{Marco teórico}
+
+\section{Fundamentos de tecnologías de interfaz de usuario en el contexto bancario}
+
+\subsection{Evolución de las interfaces de usuario en la banca}
+
+La evolución de las interfaces de usuario en el sector bancario ha experimentado
+una transformación significativa en las últimas décadas. Desde los primeros
+terminales de texto hasta las experiencias digitales omnicanal actuales, las
+instituciones financieras han adaptado continuamente sus interfaces para
+satisfacer las expectativas de los clientes y responder a los avances
+tecnológicos (Dapp, 2014). Esta evolución puede dividirse en cuatro etapas
+principales:
+
+\begin{enumerate}
+  \item \textbf{Era pre-digital} (anterior a 1990): caracterizada por interfaces
+        basadas en terminales y limitada interactividad.
+  \item \textbf{Primera ola digital} (1990-2005): aparición de los primeros sitios
+        web bancarios estáticos y posterior desarrollo de portales
+        transaccionales básicos.
+  \item \textbf{Era de la banca móvil} (2005-2015): proliferación de aplicaciones
+        móviles y adaptación de interfaces para múltiples dispositivos.
+  \item \textbf{Era de la experiencia bancaria integrada} (2015-presente):
+        interfaces omnicanal, experiencias personalizadas y adopción de
+        tecnologías emergentes como IA conversacional (King, 2018).
+\end{enumerate}
+
+\subsection{Características distintivas de las tecnologías de interfaz de usuario en la banca}
+
+Las instituciones bancarias presentan requisitos únicos para sus tecnologías
+de interfaz de usuario que las distinguen de otros sectores:
+
+\begin{itemize}
+  \item \textbf{Seguridad reforzada:} necesidad de implementar múltiples capas
+        de seguridad sin comprometer la usabilidad.
+  \item \textbf{Conformidad regulatoria:} adherencia a estándares como
+        PCI-DSS, GDPR y regulaciones específicas del sector financiero.
+  \item \textbf{Escalabilidad crítica:} capacidad para manejar picos de tráfico en
+        periodos críticos (fin de mes, declaraciones fiscales).
+  \item \textbf{Consistencia multidispositivo:} experiencia coherente a través de
+        diferentes canales y dispositivos.
+  \item \textbf{Accesibilidad obligatoria:} cumplimiento con estándares WCAG
+        para garantizar inclusión financiera.
+  \item \textbf{Rendimiento optimizado:} tiempos de respuesta mínimos para
+        operaciones críticas financieras.
+\end{itemize}
+
+Como señala Gomber, Koch, y Siering (2018), estas características particulares
+hacen que la selección de tecnologías de interfaz de usuario en el sector bancario requiera
+consideraciones específicas que van más allá de las evaluaciones tecnológicas
+estándar.
+
+\subsection{Taxonomía de frameworks de interfaz de usuario contemporáneos}
+
+Los frameworks de interfaz de usuario pueden clasificarse según diversos criterios
+relevantes para instituciones bancarias:
+
+\begin{itemize}
+  \item \textbf{Por paradigma arquitectónico:}
+  \begin{itemize}
+    \item Frameworks basados en componentes (React, Vue)
+    \item Frameworks MVC/MVVM (Angular)
+    \item Micro-frontends (múltiples frameworks integrados)
+  \end{itemize}
+  \item \textbf{Por rendimiento y optimización:}
+  \begin{itemize}
+    \item Frameworks con renderizado del lado del servidor (Next.js, Nuxt.js)
+    \item Frameworks con hidratación progresiva (Astro, Qwik)
+    \item Frameworks de compilación estática (Gatsby)
+  \end{itemize}
+  \item \textbf{Por madurez y adopción:}
+  \begin{itemize}
+    \item Frameworks empresariales consolidados
+    \item Frameworks emergentes de alto crecimiento
+    \item Soluciones experimentales
+  \end{itemize}
+\end{itemize}
+
+Esta taxonomía proporciona un marco para evaluar sistemáticamente las
+opciones disponibles según las necesidades específicas de las instituciones
+bancarias (Brown, 2023).
+
+\section{Modelos de evaluación y selección tecnológica}
+
+\subsection{Teorías de adopción tecnológica en entornos empresariales}
+
+Diversas teorías proporcionan marcos conceptuales para comprender los
+factores que influyen en la adopción tecnológica organizacional:
+
+\begin{itemize}
+  \item \textbf{Modelo de Aceptación Tecnológica (TAM):} desarrollado por
+        (Davis, 1989), enfatiza la utilidad percibida y la facilidad de uso como
+        determinantes clave de la aceptación tecnológica.
+  \item \textbf{Teoría Unificada de Aceptación y Uso de Tecnología (UTAUT):}
+        propuesta por (Venkatesh, Morris, Davis, y Davis, 2003), incorpora
+        factores adicionales como la influencia social y las condiciones
+        facilitadoras.
+  \item \textbf{Modelo TOE (Tecnología-Organización-Entorno):} formulado por
+        (Tornatzky y Fleischer, 1990), considera factores tecnológicos,
+        organizacionales y del entorno externo que influyen en las decisiones de
+        adopción.
+  \item \textbf{Teoría de la Difusión de Innovaciones:} (Rogers, 2003) describe
+        cómo, por qué y a qué velocidad se difunden las nuevas ideas y
+        tecnologías a través de culturas organizacionales.
+\end{itemize}
+
+Estos modelos proporcionan constructos teóricos fundamentales para el
+desarrollo de metodologías de evaluación adaptadas al sector bancario.
+
+\subsection{Criterios técnicos para evaluación de frameworks de interfaz de usuario}
+
+La evaluación técnica de frameworks de interfaz de usuario debe considerar múltiples
+dimensiones:
+
+\begin{itemize}
+  \item \textbf{Rendimiento:} tiempo de carga, tiempo hasta interactividad,
+        rendimiento en dispositivos de gama baja.
+  \item \textbf{Seguridad:} protección contra vulnerabilidades (XSS, CSRF),
+        posibilidad de implementar CSP.
+  \item \textbf{Mantenibilidad:} estructura del código, modularidad, facilidad
+        para testing.
+  \item \textbf{Escalabilidad:} capacidad para manejar complejidad creciente y
+        grandes equipos de desarrollo.
+  \item \textbf{Compatibilidad:} soporte para navegadores, adaptabilidad a
+        múltiples dispositivos.
+  \item \textbf{Accesibilidad:} conformidad con WCAG 2.1, herramientas
+        integradas para testing de accesibilidad.
+\end{itemize}
+
+Según Mishra y Mishra (2021), estos criterios deben ser evaluados tanto
+cuantitativa como cualitativamente para obtener una visión holística de cada
+tecnología considerada.
+
+\subsection{Criterios no técnicos en la selección tecnológica}
+
+Más allá de los aspectos técnicos, factores no técnicos juegan un papel
+crucial en la selección tecnológica para instituciones bancarias:
+
+\begin{itemize}
+  \item \textbf{Ecosistema y comunidad:} tamaño y actividad de la comunidad,
+        disponibilidad de recursos y soporte.
+  \item \textbf{Curva de aprendizaje:} facilidad de adopción por equipos
+        existentes, disponibilidad de talento en el mercado.
+  \item \textbf{Sostenibilidad a largo plazo:} respaldo corporativo, modelo de
+        gobernanza, historial de versiones.
+  \item \textbf{Costo total de propiedad:} costos directos (licencias), costos
+        indirectos (formación, migración, mantenimiento).
+  \item \textbf{Alineación estratégica:} compatibilidad con la visión tecnológica
+        de la organización y roadmap.
+\end{itemize}
+
+Estos factores no técnicos pueden ser tan determinantes como los criterios
+técnicos, especialmente en organizaciones con estructuras de decisión
+complejas como las instituciones bancarias (X. Chen, Zhang, y Li, 2019). Esta
+conclusión, sin embargo, corresponde a literatura previa a la consolidación
+de los asistentes de código basados en IA generativa. Como se argumenta en la
+sección 2.11.3 y se formaliza en el Capítulo 3, la presente investigación
+sostiene que ese peso históricamente asignado a los factores no técnicos se
+reduce en el contexto actual, lo que motiva excluirlos de la matriz de
+ponderación propia de esta metodología.
+
+\section{Regulaciones y cumplimiento en el sector bancario}
+
+\subsection{Marco regulatorio para tecnologías de interfaz de usuario en servicios financieros}
+
+Las instituciones bancarias operan en un entorno altamente regulado que
+impacta directamente las decisiones sobre tecnologías de interfaz de usuario:
+
+\begin{itemize}
+  \item \textbf{Protección de datos y privacidad:} regulaciones como GDPR
+        (Europa), CCPA (California), LGPD (Brasil).
+  \item \textbf{Seguridad financiera:} estándares PCI-DSS para procesamiento
+        de pagos, directrices de autenticación fuerte de clientes (SCA).
+  \item \textbf{Accesibilidad digital:} ADA (EE.UU.), EAA (Acta Europea de
+        Accesibilidad), AODA (Ontario).
+  \item \textbf{Regulaciones específicas del sector:} Directiva de Servicios de
+        Pago (PSD2), normativas de banca abierta.
+\end{itemize}
+
+Como señala (Arner, Barberis, y Buckley, 2017), el cumplimiento regulatorio no
+es opcional sino un requisito fundamental que debe integrarse en el proceso de
+evaluación tecnológica desde las etapas iniciales.
+
+\subsection{Impacto de las regulaciones en la selección tecnológica}
+
+Las regulaciones influyen en múltiples aspectos de la selección de tecnologías
+de interfaz de usuario:
+
+\begin{itemize}
+  \item \textbf{Restricciones arquitectónicas:} requisitos de segregación de
+        datos que afectan la arquitectura de la aplicación.
+  \item \textbf{Obligaciones de auditabilidad:} necesidad de mantener registros
+        detallados de interacciones de usuario.
+  \item \textbf{Limitaciones geográficas:} restricciones sobre dónde pueden
+        almacenarse o procesarse los datos.
+  \item \textbf{Requisitos de transparencia:} obligación de explicar ciertos
+        procesos a los usuarios.
+  \item \textbf{Estándares de notificación:} protocolos específicos para
+        comunicar incidentes o cambios.
+\end{itemize}
+
+Estas consideraciones regulatorias pueden convertirse en factores decisivos
+que eliminan ciertas opciones tecnológicas aparentemente viables desde una
+perspectiva puramente técnica (Zetzsche, Buckley, Arner, y Norton, 2020).
+
+\section{Procesos decisionales en tecnología bancaria}
+
+\subsection{Estructuras organizacionales y gobernanza tecnológica}
+
+Las instituciones bancarias han desarrollado diversos modelos de gobernanza
+tecnológica que influyen en los procesos de selección:
+
+\begin{itemize}
+  \item \textbf{Modelo centralizado:} decisiones tomadas por un comité central
+        de arquitectura tecnológica.
+  \item \textbf{Modelo federado:} autonomía limitada para unidades de negocio
+        dentro de un marco común.
+  \item \textbf{Modelo de bimodalidad IT:} separación entre sistemas legacy
+        (estabilidad) y sistemas de innovación (agilidad).
+  \item \textbf{Modelo ágil a escala:} estructuras matriciales que combinan
+        comunidades de práctica con equipos multifuncionales.
+\end{itemize}
+
+Según un estudio de (Deloitte, 2022), las instituciones financieras están
+evolucionando hacia modelos más ágiles y descentralizados, manteniendo al
+mismo tiempo controles centralizados para riesgos y cumplimiento.
+
+\subsection{Stakeholders en la selección de tecnologías de interfaz de usuario}
+
+El proceso de selección tecnológica involucra múltiples stakeholders con
+diferentes perspectivas e intereses:
+
+\begin{itemize}
+  \item \textbf{Equipos de desarrollo:} enfocados en productividad,
+        mantenibilidad y experiencia de desarrollo.
+  \item \textbf{Arquitectos empresariales:} preocupados por la coherencia con
+        la arquitectura global y roadmap tecnológico.
+  \item \textbf{Oficiales de seguridad (CISO):} centrados en minimizar
+        vulnerabilidades y garantizar conformidad.
+  \item \textbf{Ejecutivos de negocio:} interesados en tiempo de mercado, costo
+        y alineación con objetivos comerciales.
+  \item \textbf{Equipos de experiencia de usuario:} enfocados en usabilidad,
+        accesibilidad y satisfacción del cliente.
+  \item \textbf{Equipos de operaciones (DevOps):} preocupados por estabilidad,
+        monitorización y mantenimiento.
+\end{itemize}
+
+La metodología de selección debe proporcionar un marco para balancear estas
+diferentes perspectivas y prioridades (L. Chen, Yu, y Zhan, 2021).
+
+\section{Metodologías existentes para evaluación tecnológica}
+
+\subsection{Análisis comparativo de frameworks de evaluación}
+
+Diversas metodologías han sido propuestas para la evaluación sistemática de
+tecnologías:
+
+\begin{itemize}
+  \item \textbf{Modelo QSOS} (Qualification and Selection of Open Source
+        Software): proporciona un marco estructurado para evaluar software de
+        código abierto basado en funcionalidad, riesgos y costos.
+  \item \textbf{OpenBRR} (Business Readiness Rating): enfocado en la
+        preparación empresarial del software, considerando funcionalidad,
+        calidad, soporte, y otros factores.
+  \item \textbf{ISO/IEC 25010:} establece un modelo de calidad para la
+        evaluación del software, definiendo características y
+        subcaracterísticas.
+  \item \textbf{Technology Radar} (ThoughtWorks): enfoque visual para rastrear
+        tecnologías emergentes y evaluar su madurez y aplicabilidad.
+\end{itemize}
+
+Sin embargo, estos frameworks genéricos no abordan adecuadamente las
+particularidades del sector bancario, especialmente en lo referente a
+regulaciones y restricciones específicas (Jansen y Lee, 2011).
+
+\subsection{Limitaciones de las metodologías existentes para el sector bancario}
+
+Las metodologías generales de evaluación tecnológica presentan varias
+limitaciones cuando se aplican al contexto bancario:
+
+\begin{itemize}
+  \item \textbf{Insuficiente énfasis en aspectos regulatorios:} no consideran
+        adecuadamente el complejo panorama regulatorio específico del sector
+        financiero.
+  \item \textbf{Escasa integración con procesos de gestión de riesgos:} no se
+        alinean con los marcos de gestión de riesgos específicos de las
+        instituciones bancarias.
+  \item \textbf{Enfoque limitado en consideraciones de seguridad avanzada:} no
+        profundizan en requisitos de seguridad particulares del sector
+        financiero.
+  \item \textbf{Falta de alineación con estructuras de decisión complejas:} no
+        contemplan los procesos de aprobación multinivel típicos de las
+        organizaciones bancarias.
+  \item \textbf{Ausencia de métricas específicas del sector:} carecen de
+        indicadores relevantes para evaluar el éxito en el contexto bancario.
+\end{itemize}
+
+Estas limitaciones justifican el desarrollo de una metodología especializada
+para la selección de tecnologías de interfaz de usuario en instituciones bancarias (Kumar y
+Sharma, 2020).
+
+\section{Medición del éxito en la implementación tecnológica}
+
+\subsection{Indicadores clave de rendimiento (KPIs) para tecnologías de interfaz de usuario}
+
+La evaluación del éxito de las decisiones tecnológicas debe basarse en
+métricas objetivas que abarquen múltiples dimensiones.
+
+\noindent \textbf{KPIs técnicos:}
+\begin{itemize}
+  \item Tiempo de carga e interactividad (LCP, TTI, CLS)
+  \item Tasa de errores de frontend
+  \item Cobertura de pruebas automatizadas
+  \item Cumplimiento de estándares de accesibilidad
+\end{itemize}
+
+\noindent \textbf{KPIs de negocio:}
+\begin{itemize}
+  \item Tasa de conversión en flujos críticos
+  \item Satisfacción del usuario (CSAT, NPS)
+  \item Tiempo de lanzamiento al mercado de nuevas funcionalidades
+  \item Reducción de costos operativos
+\end{itemize}
+
+\noindent \textbf{KPIs de desarrollo:}
+\begin{itemize}
+  \item Velocidad de desarrollo
+  \item Facilidad de onboarding de nuevos desarrolladores
+  \item Reutilización de componentes
+  \item Eficiencia en la resolución de defectos
+\end{itemize}
+
+Según (McKinsey \& Company, 2023), las instituciones financieras que
+implementan marcos rigurosos de medición del éxito tecnológico muestran un
+27\% más de retorno sobre la inversión en tecnología que sus competidores.
+
+\subsection{Enfoques para la validación empírica de decisiones tecnológicas}
+
+La validación empírica de las decisiones tecnológicas requiere metodologías
+sistemáticas:
+
+\begin{itemize}
+  \item \textbf{Pruebas A/B:} implementación paralela de diferentes soluciones
+        para comparación directa.
+  \item \textbf{Prototipos de concepto (POC):} desarrollo de implementaciones
+        limitadas para validación técnica y de negocio.
+  \item \textbf{Evaluación comparativa (benchmarking):} comparación
+        sistemática de rendimiento contra estándares de la industria.
+  \item \textbf{Análisis post-implementación:} evaluación estructurada después
+        del despliegue para identificar lecciones aprendidas.
+\end{itemize}
+
+Estos enfoques proporcionan evidencia empírica para validar la efectividad de
+la metodología de selección tecnológica y refinar futuros procesos
+decisionales (Nielsen y Mack, 2019).
+
+\section{Tendencias emergentes en tecnologías de interfaz de usuario para banca}
+
+\subsection{Micro-frontends y arquitecturas componibles}
+
+Las arquitecturas de micro-frontends están ganando tracción en el sector
+bancario, permitiendo:
+
+\begin{itemize}
+  \item Desacoplamiento de equipos y bases de código
+  \item Adopción tecnológica gradual y heterogénea
+  \item Despliegues independientes y mayor resiliencia
+  \item Escalado organizacional más efectivo
+\end{itemize}
+
+Según (Geers, 2020), estas arquitecturas son particularmente valiosas para
+organizaciones grandes como bancos, donde múltiples equipos trabajan en
+diferentes áreas de una plataforma digital compleja.
+
+\subsection{WebAssembly y aplicaciones de alto rendimiento}
+
+WebAssembly (WASM) emerge como una tecnología prometedora para el sector
+bancario por:
+
+\begin{itemize}
+  \item Rendimiento cercano al nativo para cálculos financieros complejos
+  \item Posibilidad de reutilizar lógica de negocio crítica en múltiples
+        plataformas
+  \item Mayor seguridad al ejecutar código en un entorno sandbox
+  \item Capacidad para implementar algoritmos criptográficos avanzados en el
+        cliente
+\end{itemize}
+
+Esta tecnología podría transformar significativamente las capacidades de las
+aplicaciones bancarias de interfaz de usuario en los próximos años (Clark y McDonald,
+2022).
+
+\subsection{Inteligencia artificial y personalización avanzada}
+
+La integración de IA en interfaces bancarias representa una tendencia
+transformadora:
+
+\begin{itemize}
+  \item Interfaces adaptativas que evolucionan según el comportamiento del
+        usuario
+  \item Sistemas de recomendación para productos financieros personalizados
+  \item Asistentes virtuales avanzados para soporte proactivo
+  \item Detección de fraude en tiempo real en el lado cliente
+\end{itemize}
+
+Estas capacidades están redefiniendo las expectativas en cuanto a
+experiencia de usuario en el sector bancario y deben ser consideradas en el
+proceso de selección tecnológica (Davenport y Ronanki, 2021).
+
+\section{Referencias teóricas para el desarrollo metodológico}
+
+\subsection{Teoría de decisiones multicriterio}
+
+La selección de tecnologías de interfaz de usuario en el contexto bancario puede
+modelarse como un problema de decisión multicriterio:
+
+\begin{itemize}
+  \item \textbf{Proceso Analítico Jerárquico (AHP):} metodología estructurada
+        para organizar y analizar decisiones complejas mediante comparaciones
+        pareadas.
+  \item \textbf{Técnica de Orden de Preferencia por Similitud a la Solución
+        Ideal (TOPSIS):} identifica alternativas basadas en la distancia a
+        soluciones ideales positivas y negativas.
+  \item \textbf{Método PROMETHEE:} proporciona un ranking de alternativas
+        mediante la comparación de desempeño en diferentes criterios.
+  \item \textbf{Teoría de la Utilidad Multi-Atributo (MAUT):} evalúa
+        alternativas basándose en la utilidad global derivada de múltiples
+        atributos.
+\end{itemize}
+
+Estas teorías proporcionan fundamentos matemáticos y conceptuales para la
+construcción de una metodología robusta de selección tecnológica
+(Triantaphyllou, 2000).
+
+\section{Análisis técnico de Angular, React y Vue.js}
+
+\subsection{Arquitecturas y paradigmas de los frameworks evaluados}
+
+Los tres frameworks objeto de análisis presentan paradigmas arquitectónicos
+diferenciados que condicionan su adecuación a los requisitos específicos del
+sector bancario. Su comprensión profunda constituye la base para una
+evaluación técnica objetiva (Brown, 2023).
+
+Angular es un framework integral desarrollado y mantenido por Google que
+implementa el patrón MVVM (Model-View-ViewModel) con uso obligatorio de
+TypeScript. Su arquitectura se organiza en módulos, componentes, servicios e
+inyección de dependencias, proporcionando una estructura predecible y
+escalable que facilita el mantenimiento en equipos numerosos. A partir de la
+versión 19 (noviembre de 2024), los componentes standalone se convirtieron
+en el paradigma por defecto y el sistema de \emph{signals} para reactividad fina
+alcanzó estabilidad productiva, reduciendo la dependencia de RxJS en casos
+de uso comunes (Fain y Moiseev, 2023).
+
+React es una biblioteca de interfaz de usuario mantenida por Meta (Facebook),
+centrada en un paradigma de componentes funcionales con flujo de datos
+unidireccional. La versión 19 (diciembre de 2024) estabilizó los React Server
+Components y el React Compiler, que optimiza automáticamente las
+re-renderizaciones sin configuración adicional. Su diseño deliberadamente
+minimalista delega en el ecosistema circundante la gestión del estado global,
+enrutamiento y otras funcionalidades, otorgando flexibilidad a costa de mayor
+complejidad en la toma de decisiones arquitectónicas (Banks y Porcello, 2023).
+
+Vue.js es un framework progresivo que permite adopción incremental. La
+versión 3.5 (septiembre de 2024) consolidó la Composition API como paradigma
+principal e introdujo mejoras de rendimiento y nuevas primitivas reactivas.
+Pinia reemplazó definitivamente a Vuex como solución oficial de gestión de
+estado. Su diseño equilibrado entre estructura y flexibilidad ofrece una curva
+de aprendizaje significativamente menor que Angular, lo que facilita la
+incorporación de nuevos desarrolladores (Macrae, 2021).
+
+La puntuación técnica global $S_f$ de un framework $f$ bajo el modelo de
+evaluación ponderada propuesto se expresa como:
+
+\begin{equation}
+S_f = \sum_{i=1}^{n} w_i \cdot r_{fi}
+\label{eq:2.1}
+\end{equation}
+
+\begin{equation}
+\text{sujeto a:} \quad \sum_{i=1}^{n} w_i = 1, \quad w_i \geq 0, \quad r_{fi} \in [0,10]
+\label{eq:2.2}
+\end{equation}
+
+\noindent donde:
+\begin{itemize}
+  \item[] $S_f$ : Puntuación global del framework $f$ en el modelo de evaluación
+  \item[] $w_i$ : Peso ponderado del criterio $i$, derivado del proceso AHP
+  \item[] $r_{fi}$ : Calificación del framework $f$ en el criterio $i$, en escala $[0,10]$
+  \item[] $n$ : Número total de criterios de evaluación considerados
+\end{itemize}
+
+La Tabla \ref{tab:2.1} presenta una comparación de las dimensiones técnicas
+críticas de los tres frameworks en el contexto bancario.
+
+\begin{table}[htbp]
+\centering
+\caption{Comparación técnica de Angular, React y Vue.js para banca}
+\label{tab:2.1}
+\small
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}
+\toprule
+Dimensión & Angular 19 & React 19 & Vue 3.5 \\
+\midrule
+Tipado estático        & TypeScript (obligatorio) & Opcional (TS/JS)      & Opcional (TS/JS) \\
+Arquitectura oficial    & MVVM, modular             & Componentes funcionales & Progresiva, composable \\
+Gestión de estado       & Signals / NgRx            & Zustand / Redux Toolkit & Pinia \\
+Curva de aprendizaje    & Alta                      & Media                 & Baja--Media \\
+Seguridad integrada     & Alta (sanitización DOM)   & Media                 & Media \\
+Soporte corporativo     & Google                    & Meta                  & Comunidad OSS \\
+Equipos grandes         & Alta idoneidad            & Media idoneidad       & Media idoneidad \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Fundamentos matemáticos de la evaluación multicriterio}
+
+El Proceso Analítico Jerárquico (AHP, \emph{Analytic Hierarchy Process}),
+desarrollado por Saaty (1980), constituye el fundamento matemático de los
+instrumentos de ponderación de la metodología propuesta. Su estructura de
+comparaciones pareadas permite convertir juicios cualitativos de expertos en
+pesos cuantitativos trazables y verificables, condición esencial para
+decisiones tecnológicas en entornos regulados como la banca.
+
+\subsection{Proceso Analítico Jerárquico (AHP)}
+
+\subsubsection*{Construcción de la matriz de comparación pareada}
+
+Para $n$ criterios de evaluación, la matriz de comparación $A$ se construye
+comparando la importancia relativa de cada par de criterios mediante la
+escala de Saaty (valores 1--9):
+
+\begin{equation}
+A =
+\begin{bmatrix}
+1 & a_{12} & a_{13} & \cdots & a_{1n} \\
+a_{21} & 1 & a_{23} & \cdots & a_{2n} \\
+a_{31} & a_{32} & 1 & \cdots & a_{3n} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & a_{n3} & \cdots & 1
+\end{bmatrix}_{n \times n}
+\label{eq:2.3}
+\end{equation}
+
+donde $a_{ij} = 1/a_{ji}$ para todo $i \neq j$ (condición de reciprocidad) y
+$a_{ii} = 1$ para todo $i$.
+
+\subsubsection*{Cálculo del vector de prioridades y verificación de consistencia}
+
+El vector de prioridades (pesos) $w$ se obtiene normalizando la media
+geométrica de cada fila de la matriz $A$:
+
+\begin{equation}
+w_i = \frac{\left(\prod_{j=1}^{n} a_{ij}\right)^{1/n}}{\sum_{k=1}^{n}\left(\prod_{j=1}^{n} a_{kj}\right)^{1/n}}, \quad i = 1,2,\dots,n
+\label{eq:2.4}
+\end{equation}
+
+La consistencia del juicio de expertos se verifica mediante la Razón de
+Consistencia ($CR$):
+
+\begin{equation}
+CR = \frac{\lambda_{\text{máx}} - n}{(n-1) \cdot RI_n}
+\label{eq:2.5}
+\end{equation}
+
+Se acepta la consistencia del panel de expertos cuando $CR \leq 0.10$ (Saaty,
+1980). En la presente metodología, esta verificación se aplica al finalizar la
+Técnica Delphi de ponderación de criterios bancarios.
+
+\noindent donde:
+\begin{itemize}
+  \item[] $a_{ij}$ : Juicio de comparación entre el criterio $i$ y el criterio $j$ (escala 1--9)
+  \item[] $w_i$ : Peso normalizado del criterio $i$, componente del vector $w$
+  \item[] $\lambda_{\text{máx}}$ : Autovalor principal de la matriz de comparación $A$
+  \item[] $n$ : Número de criterios evaluados
+  \item[] $RI_n$ : Índice de Consistencia Aleatorio tabulado para matrices de orden $n$
+  \item[] $CR$ : Razón de Consistencia (aceptable si $CR \leq 0.10$)
+\end{itemize}
+
+\section{Ecosistema y estadísticas de adopción tecnológica}
+
+\subsection{Índices de adopción de frameworks de interfaz de usuario (2022--2025)}
+
+La toma de decisiones tecnológicas en instituciones bancarias debe considerar
+la adopción sectorial como indicador de madurez ecosistémica, disponibilidad
+de talento en el mercado y sostenibilidad a largo plazo del proyecto. Un
+framework abandonado o con soporte declinante representa un riesgo
+estratégico elevado para instituciones con ciclos de renovación tecnológica de
+cuatro a cinco años (Mishra y Mishra, 2021).
+
+La Tabla \ref{tab:2.2} consolida los principales índices de adopción y
+satisfacción de los tres frameworks evaluados según las encuestas anuales de
+la industria (Stack Overflow, 2024). Los datos de adopción en el sector
+financiero son de especial relevancia para la metodología propuesta, ya que
+reflejan la idoneidad percibida por profesionales que enfrentan restricciones
+similares.
+
+\begin{table}[htbp]
+\centering
+\caption{Índices de adopción y ecosistema de Angular, React y Vue.js (2022--2025)}
+\label{tab:2.2}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Indicador & Angular & React & Vue.js \\
+\midrule
+Uso global (2024)                              & 17\% & 39\%  & 15\% \\
+Satisfacción del desarrollador (2024)          & 57\% & 67\%  & 70\% \\
+Adopción en sector financiero (2024)           & 34\% & 31\%  & 12\% \\
+Crecimiento en empleos TI (2023--2024)         & +8\% & +14\% & +5\% \\
+Descargas npm mensuales (mill., 2025)          & 9.1  & 41.3  & 5.3 \\
+Versión estable actual                         & 19 (nov. 2024) & 19 (dic. 2024) & 3.5 (sep. 2024) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Es relevante destacar que, pese a la menor adopción global de Angular
+respecto a React, el sector financiero muestra una preferencia relativa hacia
+Angular. Esto se explica por su arquitectura opinionada y el tipado estático
+obligatorio con TypeScript, factores que reducen la deuda técnica en
+proyectos de largo plazo y facilitan el cumplimiento de estándares de calidad
+de código exigidos por auditorías internas en entidades bancarias
+(Devographics, 2024).
+
+Vue.js presenta la menor penetración en el sector bancario, aunque su
+crecimiento en aplicaciones de medianas empresas y fintechs es sostenido. Su
+adopción en banca está limitada principalmente por la menor disponibilidad de
+talento con experiencia en arquitecturas empresariales complejas y por el
+historial de cambios significativos de API entre versiones mayores.
+
+\subsection{Justificación de la delimitación del universo de estudio}
+
+La presente investigación acota su análisis comparativo a tres frameworks:
+Angular, React y Vue.js. Esta delimitación responde a criterios técnicos,
+sectoriales y metodológicos explícitos, no a una omisión arbitraria.
+
+\noindent \textbf{Criterio 1 --- Dominancia consolidada en el mercado.} Angular,
+React y Vue.js concentran conjuntamente el 71\% de la adopción global de
+frameworks de interfaz de usuario según Stack Overflow (2024), representando el universo
+de opciones realmente disponibles para una institución bancaria al momento
+de planificar una migración tecnológica de largo plazo. Incluir tecnologías con
+cuotas de mercado marginales introduciría opciones cuya viabilidad operativa
+es difícilmente demostrable en el horizonte de planificación del sector
+financiero.
+
+\noindent \textbf{Criterio 2 --- Distinción entre frameworks base y
+meta-frameworks.} Tecnologías frecuentemente citadas como Next.js y Nuxt.js
+no constituyen frameworks de interfaz de usuario independientes, sino meta-frameworks
+construidos sobre React y Vue.js respectivamente. Next.js extiende React
+añadiendo capacidades de renderizado en servidor (SSR) y generación estática
+(SSG), mientras que Nuxt.js hace lo propio sobre Vue.js. En consecuencia,
+evaluar React implica analizar el ecosistema sobre el cual Next.js opera;
+evaluar Vue.js cubre la base sobre la que Nuxt.js se sustenta. Incorporarlos
+como alternativas paralelas introduciría redundancia analítica y violaría el
+principio de independencia entre alternativas requerido por el Proceso
+Analítico Jerárquico (Saaty, 1980).
+
+\noindent \textbf{Criterio 3 --- Madurez empresarial y garantías de soporte.}
+Los tres frameworks seleccionados cuentan con ciclos de soporte de largo
+plazo (LTS) documentados, historiales de versiones superiores a ocho años y
+respaldo institucional formal: Angular por Google LLC, React por Meta
+Platforms Inc., y Vue.js por una fundación independiente con patrocinadores
+corporativos activos. Svelte y SvelteKit, aunque con crecimiento sostenido,
+carecen a la fecha de garantías LTS equivalentes y presentan una penetración
+inferior al 5\% en el sector financiero (Devographics, 2024), nivel
+insuficiente para justificar el costo de un proceso Delphi adicional.
+
+\noindent \textbf{Criterio 4 --- Representatividad sectorial bancaria.} Los
+datos de adopción específicos del sector financiero muestran que Angular
+(34\%) y React (31\%) dominan las arquitecturas de interfaz de usuario de instituciones
+bancarias, mientras que Vue.js (12\%) completa el conjunto de opciones con
+presencia documentada. Ningún otro framework supera el 4\% de adopción en
+este sector según las fuentes consultadas (Devographics, 2024; Stack
+Overflow, 2024). Incluir alternativas fuera de este umbral excedería el
+alcance de una investigación de caso de estudio y requeriría un panel de
+expertos de mayor dimensión para obtener juicios AHP estadísticamente
+válidos.
+
+\noindent \textbf{Criterio 5 --- Viabilidad del proceso Delphi.} El instrumento
+de consenso aplicado contempla 10 criterios de evaluación --técnicos y
+regulatorios, incluidos los dos asociados a la IA generativa-- y 3
+alternativas, generando una matriz de comparación pareada de orden
+10$\times$10 por alternativa. Incorporar un cuarto o quinto framework incrementaría
+exponencialmente el número de comparaciones requeridas, elevando el riesgo
+de inconsistencia en los juicios ($CR > 0.10$) y la carga cognitiva sobre el
+panel de expertos, comprometiendo la validez del instrumento (Saaty, 1980).
+
+En síntesis, la restricción a Angular, React y Vue.js no es una limitación del
+estudio sino una decisión metodológica fundamentada en la representatividad
+sectorial, la independencia entre alternativas exigida por el AHP y la madurez
+empresarial demostrable de las tecnologías consideradas.
+
+\subsection{Impacto de la Inteligencia Artificial generativa en el modelo de decisión}
+
+La consolidación de herramientas de Inteligencia Artificial (IA) generativa
+aplicadas al desarrollo de software --como GitHub Copilot, Cursor y
+asistentes basados en modelos de lenguaje de gran escala-- constituye, para
+la presente investigación, algo más que una tendencia tecnológica adicional:
+es la variable que justifica reformular el modelo de decisión en torno a
+únicamente dos ejes, técnico y regulatorio, en lugar de los cuatro
+considerados en versiones previas de metodologías similares (técnico,
+organizacional, regulatorio y estratégico).
+
+La Figura \ref{fig:2.1} sitúa esta transición en perspectiva temporal: entre
+2023 y 2024, la proporción de desarrolladores profesionales que utilizan o
+planean utilizar herramientas de IA generativa para programar pasó de
+70\% a 76\% (Stack Overflow, 2024), mientras que un experimento controlado
+de Microsoft Research y GitHub con 4\,867 desarrolladores encontró que los
+participantes que usaron GitHub Copilot completaron una tarea de
+programación estandarizada 55.8\% más rápido que el grupo de control (Peng,
+Kalliamvakou, Cihon, y Demirer, 2023). Este hallazgo es la base empírica de
+la Hipótesis Específica 6 (sección 1.4.2): si la brecha de productividad
+entre un desarrollador experto y uno novato en un framework determinado se
+reduce en esa magnitud, la disponibilidad de talento y la curva de
+aprendizaje --factores tradicionalmente organizacionales-- pierden peso
+relativo frente a las propiedades que la IA no puede compensar: la solidez
+técnica intrínseca del framework y su compatibilidad regulatoria.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  ybar, bar width=26pt,
+  ymin=0, ymax=90,
+  symbolic x coords={2022, 2023, 2024},
+  xtick=data,
+  ylabel={Desarrolladores que usan o planean usar IA generativa (\%)},
+  width=0.8\textwidth, height=6.5cm,
+  enlarge x limits=0.3,
+  nodes near coords, every node near coord/.append style={font=\small},
+]
+\addplot coordinates {(2022,44) (2023,70) (2024,76)};
+\end{axis}
+\end{tikzpicture}
+\caption{Evolución de la adopción de herramientas de generación de código asistida por IA entre desarrolladores profesionales (2022--2024). Elaboración propia a partir de Stack Overflow Developer Survey (2024).}
+\label{fig:2.1}
+\end{figure}
+
+Esta evidencia se traduce en dos efectos concretos sobre los criterios de
+evaluación técnica y regulatoria propuestos en el Capítulo 3.
+
+En primer lugar, sobre la \textbf{calidad del código generado por IA}: la
+naturaleza opinionada de Angular y su tipado estático obligatorio con
+TypeScript producen un contexto en que el código generado por IA resulta más
+predecible, verificable y consistente con los estándares de la arquitectura
+institucional. Los modelos de lenguaje generan sugerencias más alineadas con
+los patrones establecidos --módulos, servicios, inyección de dependencias--
+lo que reduce el esfuerzo de revisión en equipos técnicos numerosos. En
+contraste, la flexibilidad de React permite múltiples estilos de
+implementación para una misma funcionalidad, lo que puede incrementar la
+variabilidad del código generado por IA y, con ello, el riesgo de
+inconsistencia arquitectónica; un análisis independiente de repositorios
+públicos realizado por GitClear (2024) sobre más de 150 millones de líneas
+de código documentó un incremento sostenido de código duplicado y de baja
+cohesión en bases de código con alta adopción de asistentes de IA cuando el
+framework subyacente no impone una estructura clara, lo que refuerza la
+pertinencia de evaluar explícitamente este criterio.
+
+En segundo lugar, sobre la \textbf{gobernanza regulatoria del uso de IA}: el
+empleo de asistentes de código en el desarrollo de software bancario
+introduce riesgos regulatorios no contemplados por las metodologías
+genéricas de evaluación tecnológica --trazabilidad de la procedencia del
+código, licenciamiento del material con el que fueron entrenados los
+modelos, y necesidad de revisión humana obligatoria antes del despliegue a
+producción-- que instituciones supervisadas por la SBS y sujetas a PCI-DSS o
+DORA deben poder auditar. Esta dimensión regulatoria emergente, ausente en
+la literatura previa sobre selección de tecnologías de interfaz de usuario (Jansen y Lee,
+2011; Mishra y Mishra, 2021), es incorporada explícitamente en la matriz de
+ponderación del Capítulo 3.
+
+En consecuencia, los factores organizacionales que en un modelo de cuatro
+dimensiones constituían la principal fortaleza relativa de React --ecosistema
+y disponibilidad de talento-- se excluyen de la ponderación (sección 3.3.2)
+y se sustituyen por estos dos criterios técnico-regulatorios emergentes, sin
+que ello implique ignorar el fenómeno de la IA: por el contrario, lo sitúa en
+el centro del modelo, pero evaluado en los términos --técnicos y
+regulatorios-- que dan nombre a esta investigación.

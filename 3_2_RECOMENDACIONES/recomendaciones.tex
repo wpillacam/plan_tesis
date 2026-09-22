@@ -1,0 +1,70 @@
+\chapter*{Recomendaciones}
+\addcontentsline{toc}{chapter}{Recomendaciones}
+
+\begin{enumerate}
+  \item Se recomienda que las instituciones bancarias que adopten la
+        metodología propuesta realicen una calibración de los pesos de los
+        criterios técnicos y regulatorios a su contexto específico antes de
+        iniciar la Fase 2. Los pesos presentados en este trabajo
+        (técnica 60\% / regulatoria 40\%) corresponden a una institución
+        bancaria mediana peruana y pueden requerir ajuste según el tamaño
+        de la organización, el marco regulatorio nacional y el nivel de
+        adopción de herramientas de IA generativa en el equipo de
+        desarrollo. La Técnica Delphi con expertos internos --desarrolladores
+        senior, arquitectos y oficiales de cumplimiento-- es el instrumento
+        recomendado para esta calibración.
+
+  \item Dado el ritmo acelerado de evolución tanto del ecosistema de
+        interfaz de usuario como de las herramientas de generación de
+        código asistida por IA --con lanzamientos de versiones mayores
+        anuales en Angular y React, y mejoras semestrales en asistentes
+        como GitHub Copilot y Cursor-- se recomienda revisar los criterios
+        técnicos de evaluación, y en particular el criterio de calidad del
+        código generado por IA, con una periodicidad mínima de 12 meses. La
+        metodología propuesta es compatible con revisiones parciales que
+        actualicen únicamente los datos de la Fase 2 sin repetir las fases
+        1, 3 y 4 completas.
+
+  \item Se recomienda incorporar el Reglamento DORA (\emph{Digital
+        Operational Resilience Act}), vigente en la Unión Europea desde enero
+        de 2025, como criterio de filtro previo obligatorio para
+        instituciones bancarias con presencia o aspiraciones en el mercado
+        europeo, integrándolo junto con el criterio de gobernanza de IA
+        propuesto en el Capítulo 3. Los requisitos de resiliencia
+        operacional digital de DORA --gestión de riesgos TIC de terceros,
+        pruebas de penetración basadas en amenazas (TLPT), notificación de
+        incidentes-- imponen restricciones arquitectónicas específicas que
+        deben verificarse antes de iniciar la evaluación comparativa de
+        frameworks, ya que pueden eliminar opciones con dependencias en
+        proveedores no conformes, incluidos proveedores de asistentes de IA.
+
+  \item Se recomienda que las instituciones bancarias establezcan una
+        política formal de gobernanza para el uso de asistentes de código
+        basados en IA en el desarrollo de software bancario --con revisión
+        humana obligatoria (\emph{human-in-the-loop}), trazabilidad de la
+        procedencia del código sugerido y verificación de licenciamiento--
+        de forma previa e independiente a la selección del framework de
+        interfaz de usuario, dado que el criterio de gobernanza de IA
+        propuesto en esta metodología presupone la existencia de dicha
+        política institucional.
+
+  \item Para investigaciones futuras, se recomienda extender la metodología
+        propuesta a la selección de tecnologías de interfaz de usuario para
+        canales móviles nativos e híbridos (React Native, Flutter, Ionic),
+        donde las instituciones bancarias enfrentan decisiones tecnológicas
+        igualmente críticas pero con un conjunto diferente de restricciones
+        regulatorias y de calidad de código asistido por IA. La estructura
+        metodológica de cuatro fases es directamente adaptable a este
+        dominio con ajustes en los criterios de la Fase 2.
+
+  \item Se recomienda que las instituciones bancarias que implementen la
+        metodología documenten sistemáticamente sus lecciones aprendidas en
+        un repositorio institucional de decisiones tecnológicas
+        (\emph{Architecture Decision Records}), incluyendo los scorecard de
+        evaluación completos, las actas de deliberación y los prompts o
+        contextos utilizados para generar código durante las pruebas de
+        concepto. Esta base de conocimiento reduciría el tiempo de ejecución
+        en selecciones tecnológicas futuras y proporcionaría evidencia
+        histórica para auditorías regulatorias de gobernanza tecnológica y
+        de IA.
+\end{enumerate}

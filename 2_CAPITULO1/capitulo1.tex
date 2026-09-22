@@ -1,0 +1,654 @@
+\chapter{Introducción}
+
+\section{Generalidades}
+
+En la actualidad, el sector bancario atraviesa una profunda transformación
+impulsada por la digitalización de los servicios financieros y las crecientes
+expectativas de los usuarios. Este fenómeno, denominado transformación
+digital, ha redefinido la manera en que las instituciones bancarias interactúan
+con sus clientes, gestionan sus operaciones y desarrollan nuevos productos y
+servicios. En este contexto de evolución acelerada, la arquitectura tecnológica
+que sustenta las interfaces digitales de usuario ha adquirido una importancia
+estratégica sin precedentes, convirtiéndose en un factor diferenciador clave
+para la competitividad y sostenibilidad de las entidades financieras.
+
+La selección de tecnologías de interfaz de usuario representa una decisión
+crítica con implicaciones de largo alcance para las instituciones bancarias.
+Frameworks como Angular, React y Vue ofrecen diferentes paradigmas,
+arquitecturas y ecosistemas que determinan aspectos técnicos como
+rendimiento, seguridad y escalabilidad. En un sector altamente regulado como
+el bancario, donde la confianza del cliente y la seguridad de las transacciones
+son imperativos categóricos, la elección tecnológica adquiere además
+dimensiones regulatorias ineludibles relacionadas con el cumplimiento
+normativo, la protección de datos sensibles y la continuidad operativa. Por
+ello, la presente investigación centra su modelo de decisión en dos ejes:
+los \textbf{criterios técnicos} (propiedades intrínsecas del framework) y los
+\textbf{criterios regulatorios} (exigencias normativas del sector financiero),
+por ser los que efectivamente condicionan la viabilidad de una tecnología de
+interfaz de usuario en un entorno bancario regulado.
+
+Un factor adicional obliga a revisar el peso relativo de estos criterios: la
+consolidación de herramientas de generación de código asistida por
+Inteligencia Artificial (IA) --GitHub Copilot, Cursor, Claude Code y asistentes
+equivalentes basados en modelos de lenguaje de gran escala-- que, según la
+encuesta de Stack Overflow (2024), ya son utilizadas o planificadas por más
+de tres cuartas partes de los desarrolladores profesionales encuestados. Este
+fenómeno reduce la brecha de productividad y curva de aprendizaje que
+históricamente diferenciaba a los frameworks por su ecosistema o la
+disponibilidad de talento especializado (Peng, Kalliamvakou, Cihon, y
+Demirer, 2023), desplazando el eje decisivo de la selección tecnológica desde
+factores organizacionales --que la IA generativa tiende a nivelar-- hacia las
+propiedades técnicas intrínsecas del framework y su compatibilidad con las
+exigencias regulatorias del sector, que la IA no puede sustituir ni flexibilizar.
+Esta reconfiguración del problema de decisión constituye el eje central que
+justifica el alcance de la presente tesis.
+
+\section{Descripción del problema de investigación}
+
+\subsection*{Situación actual en instituciones bancarias}
+
+Un estudio reciente realizado por Deloitte (2023) entre 87 instituciones
+financieras globales reveló que el 78\% de las entidades bancarias considera
+crítica la modernización de sus interfaces digitales para mantener su
+competitividad. Sin embargo, el mismo estudio identifica que solo el 31\%
+reporta tener procesos estructurados para evaluar y seleccionar tecnologías
+de interfaz de usuario, evidenciando una brecha significativa entre
+necesidades estratégicas y capacidades metodológicas.
+
+El análisis de 35 casos de implementación de plataformas digitales en bancos
+latinoamericanos durante el período 2020-2024 muestra que:
+
+\begin{itemize}
+  \item 47\% excedió su presupuesto inicial en más del 40\%
+  \item 62\% experimentó retrasos significativos en el despliegue (>6 meses)
+  \item 28\% requirió una refactorización mayor dentro de los primeros 18 meses
+  \item 53\% reportó dificultades para integrar sistemas legacy con las nuevas
+        tecnologías de interfaz de usuario
+\end{itemize}
+
+Estos indicadores apuntan a deficiencias sistemáticas en los procesos de
+selección tecnológica que generan impactos financieros y operativos
+cuantificables.
+
+\subsection*{Especificidad de requisitos no atendida}
+
+Las instituciones bancarias operan bajo un conjunto de restricciones y
+requerimientos particulares --predominantemente técnicos y regulatorios--
+que no son adecuadamente contemplados por metodologías genéricas de
+selección tecnológica:
+
+\begin{enumerate}
+  \item \textbf{Requisitos regulatorios estrictos:} el cumplimiento de normativas
+        como PCI-DSS, GDPR, Basilea III y regulaciones locales impone
+        restricciones específicas sobre las tecnologías de interfaz de usuario
+        que deben evaluarse sistemáticamente. Un análisis del Banco
+        Interamericano de Desarrollo (2024) identificó que las sanciones por
+        incumplimiento normativo relacionado con interfaces digitales
+        bancarias aumentaron un 215\% entre 2020-2024.
+  \item \textbf{Patrones de tráfico altamente variables:} los sistemas bancarios
+        experimentan fluctuaciones de carga específicas (cierres de mes, días de
+        pago, campañas promocionales) que demandan características
+        técnicas particulares de escalabilidad y rendimiento. Datos compilados
+        por McKinsey (2023) muestran que los picos de tráfico en plataformas
+        bancarias pueden superar hasta 20 veces el volumen normal, comparado
+        con 5-7 veces en otros sectores.
+  \item \textbf{Requisitos de integración complejos:} las arquitecturas bancarias
+        típicamente incluyen entre 12-18 sistemas core interconectados con
+        antigüedad promedio de 15+ años (Gartner, 2024), generando desafíos
+        técnicos de integración que no se presentan en otros sectores y que la
+        normativa exige documentar y auditar.
+  \item \textbf{Criticidad operacional:} la indisponibilidad de plataformas
+        bancarias genera impactos económicos y reputacionales excepcionales,
+        además de infracciones a los acuerdos regulatorios de continuidad de
+        servicio. Un estudio de Forrester (2023) cuantificó que cada minuto de
+        caída en interfaces digitales bancarias representa pérdidas promedio de
+        US\$67,000, significativamente superior a otros sectores.
+\end{enumerate}
+
+\subsection*{Evolución acelerada y obsolescencia tecnológica}
+
+El ecosistema de tecnologías de interfaz de usuario experimenta una
+evolución particularmente acelerada que presenta desafíos técnicos
+específicos para instituciones bancarias.
+
+\begin{table}[htbp]
+\centering
+\caption{Comparación de frameworks}
+\label{tab:1.1}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Framework & Versiones Mayores (2020-2024) & Cambios Estructurales & Actualizaciones de Seguridad \\
+\midrule
+Angular & 6 (v9-v14)  & 3 & 27 \\
+React   & 3 (v16-v18) & 2 & 21 \\
+Vue     & 2 (v2-v3)   & 2 & 18 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Este ritmo evolutivo contrasta con los ciclos de implementación en
+instituciones bancarias, donde el tiempo promedio entre renovaciones
+tecnológicas de interfaz de usuario es de 4.7 años (FinTech Magazine, 2024),
+creando una tensión estructural entre evolución tecnológica y estabilidad
+operativa que un modelo de decisión técnico-regulatorio debe absorber.
+
+\subsection*{Fragmentación decisional en criterios técnicos y regulatorios}
+
+Un análisis de procesos de selección tecnológica en 15 instituciones bancarias
+(PwC, 2023) identificó patrones problemáticos recurrentes:
+
+\begin{itemize}
+  \item \textbf{Inconsistencia metodológica:} 87\% utilizó criterios técnicos
+        diferentes entre departamentos para seleccionar tecnologías de
+        interfaz de usuario, sin una matriz de ponderación común.
+  \item \textbf{Documentación insuficiente:} 73\% carecía de documentación
+        estructurada que justificara la decisión ante auditorías regulatorias.
+  \item \textbf{Evaluación parcial:} 62\% evaluó solo aspectos técnicos de
+        rendimiento sin verificar sistemáticamente el cumplimiento normativo.
+  \item \textbf{Ausencia de métricas:} 91\% no estableció KPIs técnicos ni
+        regulatorios específicos para medir el éxito de la selección tecnológica.
+  \item \textbf{Desconexión histórica:} 78\% no incorporó sistemáticamente
+        lecciones aprendidas de implementaciones anteriores.
+\end{itemize}
+
+Esta fragmentación obstaculiza el desarrollo de capacidades institucionales
+sostenibles y reproduce ineficiencias entre proyectos.
+
+\subsection*{Impacto económico y competitivo}
+
+La problemática descrita genera impactos cuantificables:
+
+\begin{itemize}
+  \item \textbf{Costos directos:} según Boston Consulting Group (2023), las
+        decisiones subóptimas en selección de tecnologías de interfaz de
+        usuario representan un sobrecosto promedio del 32\% en proyectos de
+        transformación digital bancaria.
+  \item \textbf{Time-to-market:} las entidades con procesos maduros de
+        selección tecnológica reducen en 47\% el tiempo de despliegue de
+        nuevas funcionalidades (EY, 2024).
+  \item \textbf{Riesgo regulatorio:} las instituciones sin un proceso técnico y
+        regulatorio documentado experimentan hallazgos de auditoría
+        relacionados con interfaces digitales con una frecuencia 2.3 veces
+        superior al promedio sectorial (Stack Overflow Banking Survey, 2023).
+  \item \textbf{Ventaja competitiva:} las instituciones con metodologías
+        estructuradas de selección tecnológica presentan un Net Promoter Score
+        promedio 12 puntos superior en canales digitales (J.D. Power Banking
+        Satisfaction Study, 2024).
+\end{itemize}
+
+\subsection*{El efecto nivelador de la IA generativa sobre los factores organizacionales}
+
+Hasta hace pocos años, criterios organizacionales como la disponibilidad de
+talento especializado o la curva de aprendizaje de un framework pesaban de
+forma comparable a los criterios técnicos en las decisiones tecnológicas
+(Mishra y Mishra, 2021). La evidencia reciente sobre productividad de
+desarrolladores con asistentes de código basados en IA --un incremento de
+hasta 55\% en la velocidad de completado de tareas de programación,
+documentado por Peng et al. (2023) en un experimento controlado con GitHub
+Copilot-- sugiere que esta brecha se está reduciendo: un desarrollador con
+experiencia media, asistido por IA, puede volverse productivo en un framework
+que no domina en un tiempo significativamente menor al histórico. Esto no
+elimina la necesidad de criterios de evaluación, pero sí modifica cuáles son
+los verdaderamente determinantes: como se detalla en el Capítulo 2 (sección
+2.11.3) y se valida empíricamente en el Capítulo 4, el código generado por IA
+es más consistente y auditable en frameworks fuertemente tipados y
+opinionados, lo que convierte la \emph{calidad y verificabilidad del código
+asistido por IA} en un criterio técnico de primer orden, y la
+\emph{gobernanza regulatoria del uso de herramientas de IA generativa} en un
+criterio regulatorio emergente --ninguno de los dos contemplado por las
+metodologías genéricas de evaluación tecnológica existentes (Jansen y Lee,
+2011).
+
+\subsection{Problema General}
+
+¿De qué manera puede desarrollarse una metodología basada en criterios
+técnicos y regulatorios para la selección de tecnologías de interfaz de usuario
+(Angular, React y Vue) en instituciones bancarias, que sea coherente con el
+contexto actual de generación de código asistida por Inteligencia Artificial, y
+cuya aplicación sistemática resulte en decisiones tecnológicas mejor
+alineadas con las necesidades específicas del sector?
+
+\subsection{Problemas Específicos}
+
+\begin{enumerate}
+  \item ¿Qué criterios técnicos y regulatorios específicos del sector bancario
+        deben ser incorporados en la evaluación comparativa de tecnologías de
+        interfaz de usuario para maximizar su alineación con requisitos
+        sectoriales?
+  \item ¿Qué instrumentos metodológicos permiten cuantificar objetivamente la
+        idoneidad de diferentes frameworks de interfaz de usuario (Angular,
+        React y Vue) frente a los requisitos técnicos y regulatorios de
+        instituciones bancarias?
+  \item ¿Qué proceso estructurado de toma de decisiones permite integrar
+        coherentemente las dimensiones técnica y regulatoria en la selección
+        de tecnologías de interfaz de usuario para instituciones financieras
+        con arquitecturas heterogéneas y requisitos regulatorios estrictos?
+  \item ¿Cómo puede validarse empíricamente la efectividad de la metodología
+        propuesta en escenarios reales de transformación digital bancaria?
+  \item ¿Qué indicadores permiten medir objetivamente el éxito de una
+        selección tecnológica de interfaz de usuario en el contexto específico
+        de implementaciones bancarias?
+  \item ¿De qué manera la disponibilidad de herramientas de generación de
+        código asistida por Inteligencia Artificial modifica la relevancia
+        relativa de los criterios técnicos y regulatorios frente a los
+        criterios organizacionales tradicionalmente considerados en la
+        selección de tecnologías de interfaz de usuario?
+\end{enumerate}
+
+\section{Objetivos del estudio}
+
+\subsection{Objetivo General}
+
+Desarrollar y validar una metodología basada en criterios técnicos y
+regulatorios para la selección de tecnologías de interfaz de usuario (Angular,
+React y Vue) en el contexto de transformación digital de instituciones
+bancarias, incorporando el efecto de las herramientas de generación de
+código asistida por Inteligencia Artificial en la relevancia relativa de dichos
+criterios, y optimizando la alineación entre elecciones tecnológicas y
+necesidades institucionales.
+
+\subsection{Objetivos Específicos}
+
+\begin{enumerate}
+  \item Identificar y categorizar los criterios técnicos y regulatorios críticos
+        del sector bancario que deben considerarse en la evaluación de
+        tecnologías de interfaz de usuario, mediante revisión sistemática de
+        literatura especializada y consulta a expertos sectoriales.
+  \item Diseñar instrumentos metodológicos cuantitativos y cualitativos para la
+        evaluación comparativa objetiva de Angular, React y Vue frente a
+        requisitos técnicos y regulatorios bancarios, incluyendo matrices de
+        decisión ponderadas, rúbricas de evaluación y mecanismos de
+        benchmarking técnico.
+  \item Formular un proceso estructurado de toma de decisiones que integre
+        coherentemente las dimensiones técnica y regulatoria en la selección
+        de tecnologías de interfaz de usuario para instituciones financieras,
+        con definición de roles, responsabilidades y flujos de trabajo
+        específicos para arquitecturas heterogéneas y entornos regulatorios
+        estrictos.
+  \item Implementar y validar la metodología propuesta mediante su aplicación
+        en un caso de estudio real en una institución bancaria en proceso de
+        transformación digital, documentando sistemáticamente resultados,
+        ajustes metodológicos y lecciones aprendidas.
+  \item Desarrollar un sistema de indicadores técnicos y regulatorios para
+        evaluar el éxito de la selección tecnológica de interfaz de usuario en
+        implementaciones bancarias.
+  \item Determinar el efecto de la adopción de herramientas de generación de
+        código asistida por Inteligencia Artificial sobre la ponderación relativa
+        de los criterios técnicos y regulatorios frente a los criterios
+        organizacionales, mediante análisis de sensibilidad comparado con y
+        sin dichos criterios en el modelo.
+\end{enumerate}
+
+\section{Hipótesis del estudio}
+
+\subsection{Hipótesis General}
+
+La implementación de una metodología estructurada basada en criterios
+técnicos y regulatorios --coherente con el contexto de generación de código
+asistida por Inteligencia Artificial-- para la selección de tecnologías de
+interfaz de usuario en instituciones bancarias, resulta en decisiones
+tecnológicas significativamente más alineadas con los requisitos particulares
+de las entidades financieras y genera mejores resultados en términos de
+rendimiento técnico y cumplimiento normativo, en comparación con enfoques
+de selección tecnológica genéricos, no estructurados o centrados
+predominantemente en factores organizacionales.
+
+\subsection{Hipótesis Específicas}
+
+\begin{enumerate}
+  \item La identificación y ponderación sistemática de criterios técnicos y
+        regulatorios específicos del sector bancario para la evaluación de
+        tecnologías de interfaz de usuario permite una valoración más precisa
+        de la idoneidad de frameworks como Angular, React y Vue frente a los
+        requerimientos particulares de instituciones financieras, en
+        comparación con la aplicación de criterios generales de evaluación
+        tecnológica.
+
+        \textbf{Variables:}
+        \begin{itemize}
+          \item \textit{Variable independiente:} Aplicación de criterios
+                técnicos y regulatorios específicos del sector bancario
+                ponderados sistemáticamente.
+          \item \textit{Variable dependiente:} Precisión en la valoración de
+                idoneidad de frameworks de interfaz de usuario para requisitos
+                financieros.
+          \item \textit{Indicadores:} Grado de alineación entre características
+                tecnológicas y requisitos técnicos/regulatorios bancarios; nivel
+                de satisfacción de stakeholders con el proceso evaluativo.
+        \end{itemize}
+
+  \item La utilización de instrumentos metodológicos cuantitativos y
+        cualitativos diseñados específicamente para evaluar tecnologías de
+        interfaz de usuario en contextos bancarios incrementa
+        significativamente la objetividad, reproducibilidad y transparencia del
+        proceso de selección tecnológica, comparado con evaluaciones basadas
+        en criterios subjetivos o instrumentos genéricos.
+
+        \textbf{Variables:}
+        \begin{itemize}
+          \item \textit{Variable independiente:} Utilización de instrumentos
+                metodológicos especializados (cuantitativos y cualitativos).
+          \item \textit{Variable dependiente:} Objetividad, reproducibilidad y
+                transparencia del proceso de selección.
+          \item \textit{Indicadores:} Consistencia de resultados entre
+                evaluadores independientes; trazabilidad de decisiones;
+                variabilidad de calificaciones para criterios equivalentes.
+        \end{itemize}
+
+  \item La implementación de un proceso decisional estructurado que integre
+        exclusivamente consideraciones técnicas y regulatorias, con roles y
+        responsabilidades claramente definidos, optimiza la selección de
+        tecnologías de interfaz de usuario para arquitecturas bancarias
+        heterogéneas, resultando en mejores decisiones organizacionales
+        comparado con aproximaciones decisionales fragmentadas o
+        excesivamente centradas en preferencias subjetivas de los equipos.
+
+        \textbf{Variables:}
+        \begin{itemize}
+          \item \textit{Variable independiente:} Implementación de un proceso
+                decisional estructurado centrado en criterios técnicos y
+                regulatorios, con roles definidos.
+          \item \textit{Variable dependiente:} Calidad de integración entre
+                consideraciones técnicas y regulatorias.
+          \item \textit{Indicadores:} Tiempo requerido para toma de decisiones;
+                nivel de participación cross-funcional; grado de consenso
+                organizacional; documentación de justificaciones decisionales.
+        \end{itemize}
+
+  \item La validación empírica de la metodología propuesta mediante su
+        aplicación en un caso de estudio real en una institución bancaria
+        demuestra su efectividad práctica y aplicabilidad, generando resultados
+        cualitativa y cuantitativamente mejores que los obtenidos con
+        metodologías previas no especializadas.
+
+        \textbf{Variables:}
+        \begin{itemize}
+          \item \textit{Variable independiente:} Aplicación de la metodología
+                propuesta en caso real.
+          \item \textit{Variable dependiente:} Efectividad práctica y
+                aplicabilidad de la metodología.
+          \item \textit{Indicadores:} Comparativa entre resultados pre/post
+                implementación; nivel de adherencia metodológica en
+                implementación real; adaptaciones requeridas en
+                implementación.
+        \end{itemize}
+
+  \item El sistema de indicadores técnicos y regulatorios desarrollado para
+        evaluar el éxito de selecciones tecnológicas de interfaz de usuario en
+        implementaciones bancarias permite medir con mayor precisión el
+        impacto técnico, operativo y de cumplimiento normativo de las
+        decisiones tecnológicas, en comparación con métricas genéricas de
+        evaluación de proyectos.
+
+        \textbf{Variables:}
+        \begin{itemize}
+          \item \textit{Variable independiente:} Sistema de indicadores
+                técnicos y regulatorios para contexto bancario.
+          \item \textit{Variable dependiente:} Precisión en la medición de
+                impactos técnicos y de cumplimiento.
+          \item \textit{Indicadores:} Sensibilidad y especificidad de métricas;
+                correlación entre indicadores propuestos y resultados
+                organizacionales; capacidad predictiva de los indicadores sobre
+                éxito implementativo.
+        \end{itemize}
+
+  \item La disponibilidad de herramientas de generación de código asistida
+        por Inteligencia Artificial reduce significativamente la relevancia
+        relativa de los criterios organizacionales (disponibilidad de talento,
+        ecosistema, curva de aprendizaje) frente a los criterios técnicos y
+        regulatorios en la selección de tecnologías de interfaz de usuario en
+        instituciones bancarias, sin alterar --e incluso reforzando-- la
+        preferencia por frameworks con arquitecturas tipadas y opinionadas.
+
+        \textbf{Variables:}
+        \begin{itemize}
+          \item \textit{Variable independiente:} Grado de adopción de
+                herramientas de generación de código asistida por IA en el
+                equipo de desarrollo.
+          \item \textit{Variable dependiente:} Relevancia relativa de los
+                criterios técnicos y regulatorios frente a los organizacionales
+                en la puntuación final de la decisión.
+          \item \textit{Indicadores:} Variación de la brecha de puntuación
+                ($\Delta S$) entre frameworks al incluir o excluir los criterios
+                asociados a la IA generativa; proporción del peso Delphi
+                asignado a criterios técnicos y regulatorios frente al
+                históricamente asignado a criterios organizacionales.
+        \end{itemize}
+\end{enumerate}
+
+\subsection{Operacionalización de variables}
+
+\begin{table}[htbp]
+\centering
+\caption{Operacionalización de variables}
+\label{tab:1.2}
+\small
+\begin{tabular}{@{}p{1cm}p{3.6cm}p{3.6cm}p{4.2cm}@{}}
+\toprule
+Hip. & Variables & Indicadores & Instrumentos de medición \\
+\midrule
+H1 & VI: Aplicación de criterios técnicos y regulatorios bancarios \newline
+     VD: Precisión en valoración de idoneidad
+   & Grado de alineación entre características y requisitos \newline
+     Nivel de satisfacción de stakeholders
+   & Matriz de trazabilidad requisitos-características \newline
+     Encuestas de satisfacción a stakeholders \\
+\addlinespace
+H2 & VI: Utilización de instrumentos metodológicos especializados \newline
+     VD: Objetividad, reproducibilidad y transparencia
+   & Consistencia entre evaluadores \newline
+     Trazabilidad de decisiones
+   & Test de concordancia inter-evaluadores \newline
+     Auditoría de trazabilidad decisional \\
+\addlinespace
+H3 & VI: Proceso decisional técnico-regulatorio estructurado \newline
+     VD: Calidad de integración de consideraciones
+   & Tiempo para decisiones \newline
+     Participación cross-funcional
+   & Registro de tiempos decisionales \newline
+     Análisis de participación por área \\
+\addlinespace
+H4 & VI: Aplicación de metodología en caso real \newline
+     VD: Efectividad práctica y aplicabilidad
+   & Comparativa pre/post implementación \newline
+     Adherencia metodológica
+   & Análisis comparativo de resultados \newline
+     Lista de verificación de cumplimiento metodológico \\
+\addlinespace
+H5 & VI: Sistema de indicadores técnicos y regulatorios \newline
+     VD: Precisión en medición de impactos
+   & Sensibilidad y especificidad de métricas \newline
+     Correlación indicadores-resultados
+   & Análisis de sensibilidad y especificidad \newline
+     Estudios de correlación estadística \\
+\addlinespace
+H6 & VI: Adopción de herramientas de IA generativa en desarrollo \newline
+     VD: Relevancia relativa de criterios técnicos-regulatorios
+   & Variación de $\Delta S$ con/sin criterios de IA \newline
+     Proporción del peso Delphi técnico-regulatorio
+   & Análisis de sensibilidad comparado (Tabla \ref{tab:4.2}) \newline
+     Encuesta al panel Delphi sobre percepción del impacto de IA \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Matriz de Consistencia}
+
+\small
+\begin{longtable}{@{}p{4cm}p{4cm}p{4.5cm}@{}}
+\caption{Matriz de Consistencia}\label{tab:1.3}\\
+\toprule
+Problemas & Objetivos & Hipótesis \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{\small\itshape (Tabla \ref{tab:1.3} -- continuación)}\\
+\toprule
+Problemas & Objetivos & Hipótesis \\
+\midrule
+\endhead
+\midrule
+\multicolumn{3}{r}{\small\itshape Continúa en la página siguiente}\\
+\endfoot
+\bottomrule
+\endlastfoot
+PG: ¿De qué manera puede desarrollarse una metodología basada en criterios
+técnicos y regulatorios para la selección de tecnologías de interfaz de
+usuario en instituciones bancarias, coherente con el contexto de IA
+generativa?
+&
+OG: Desarrollar y validar una metodología basada en criterios técnicos y
+regulatorios para la selección de tecnologías de interfaz de usuario en
+instituciones bancarias, incorporando el efecto de la IA generativa.
+&
+HG: La implementación de una metodología estructurada basada en criterios
+técnicos y regulatorios, coherente con el contexto de IA generativa, resulta
+en decisiones tecnológicas significativamente más alineadas con los
+requisitos particulares de las entidades financieras, en comparación con
+enfoques genéricos o centrados predominantemente en factores
+organizacionales. \\
+\addlinespace
+PE1: ¿Qué criterios técnicos y regulatorios específicos del sector bancario
+deben ser incorporados en la evaluación?
+&
+OE1: Identificar y categorizar los criterios técnicos y regulatorios críticos
+del sector bancario para la evaluación de tecnologías de interfaz de usuario.
+&
+HE1: La identificación y ponderación sistemática de criterios técnicos y
+regulatorios permite una valoración más precisa de la idoneidad de
+frameworks. \\
+\addlinespace
+PE2: ¿Qué instrumentos metodológicos permiten cuantificar objetivamente la
+idoneidad de diferentes frameworks?
+&
+OE2: Diseñar instrumentos metodológicos cuantitativos y cualitativos para
+evaluación comparativa objetiva.
+&
+HE2: La utilización de instrumentos metodológicos especializados incrementa
+significativamente la objetividad, reproducibilidad y transparencia. \\
+\addlinespace
+PE3: ¿Qué proceso estructurado de toma de decisiones integra
+coherentemente las dimensiones técnica y regulatoria?
+&
+OE3: Formular un proceso estructurado de toma de decisiones que integre
+las dimensiones técnica y regulatoria.
+&
+HE3: La implementación de un proceso decisional estructurado
+técnico-regulatorio optimiza la integración de consideraciones frente a
+aproximaciones fragmentadas. \\
+\addlinespace
+PE4: ¿Cómo puede validarse empíricamente la efectividad de la metodología
+propuesta?
+&
+OE4: Implementar y validar la metodología propuesta mediante caso de
+estudio real.
+&
+HE4: La validación empírica mediante caso de estudio demuestra efectividad
+práctica y aplicabilidad. \\
+\addlinespace
+PE5: ¿Qué indicadores permiten medir objetivamente el éxito de una
+selección tecnológica de interfaz de usuario?
+&
+OE5: Desarrollar un sistema de indicadores técnicos y regulatorios para
+evaluar el éxito de la selección tecnológica.
+&
+HE5: El sistema de indicadores técnicos y regulatorios permite medir con
+mayor precisión el impacto técnico y de cumplimiento normativo. \\
+\addlinespace
+PE6: ¿De qué manera la disponibilidad de herramientas de IA generativa
+modifica la relevancia relativa de los criterios técnicos y regulatorios frente
+a los organizacionales?
+&
+OE6: Determinar el efecto de la adopción de herramientas de IA generativa
+sobre la ponderación relativa de los criterios técnicos y regulatorios
+frente a los organizacionales.
+&
+HE6: La disponibilidad de herramientas de IA generativa reduce la
+relevancia relativa de los criterios organizacionales frente a los técnicos y
+regulatorios, sin alterar la preferencia por frameworks tipados y
+opinionados. \\
+\end{longtable}
+\normalsize
+
+\section{Metodología}
+
+La metodología seguida para el desarrollo de la presente tesis es la siguiente:
+
+\begin{enumerate}
+  \item \textbf{Enfoque de investigación.} La investigación requiere un enfoque
+        mixto (cuantitativo-cualitativo) dado que se necesita identificar y
+        categorizar criterios técnicos y regulatorios específicos del sector
+        bancario, diseñar instrumentos metodológicos para evaluación objetiva,
+        determinar el efecto moderador de la IA generativa sobre dichos
+        criterios, y validar empíricamente la efectividad de la metodología
+        propuesta.
+
+  \item \textbf{Diseño de investigación.} Se propone un diseño de investigación
+        aplicada con componente exploratorio y descriptivo seguido de una fase
+        experimental a través de caso de estudio:
+        \begin{itemize}
+          \item Fase exploratoria-descriptiva: para identificar criterios
+                técnicos y regulatorios relevantes en la selección de
+                tecnologías de interfaz de usuario en el sector bancario, y
+                para caracterizar el efecto de las herramientas de IA
+                generativa sobre la relevancia de criterios organizacionales.
+          \item Fase experimental: para validar la metodología propuesta
+                mediante un caso de estudio real en una institución bancaria,
+                incluyendo un análisis de sensibilidad con y sin los criterios
+                asociados a la IA generativa.
+        \end{itemize}
+
+  \item \textbf{Métodos de recolección de datos.}
+        \begin{itemize}
+          \item \emph{Para identificación de criterios (PE1):} revisión
+                sistemática de literatura, entrevistas semiestructuradas con
+                expertos del sector y técnica Delphi para consensuar y validar
+                los criterios técnicos y regulatorios críticos con panel de
+                expertos.
+          \item \emph{Para diseño de instrumentos metodológicos (PE2):}
+                construcción de matrices de evaluación, escalas ponderadas y
+                modelos de puntuación cuantitativa.
+          \item \emph{Para el proceso decisional técnico-regulatorio (PE3):}
+                mapeo de procesos, estudios de caso comparativos y
+                entrevistas a stakeholders.
+          \item \emph{Para validación empírica (PE4):} caso de estudio,
+                experimentación controlada y medición pre/post-implementación.
+          \item \emph{Para indicadores de éxito (PE5):} establecimiento de KPIs
+                técnicos y regulatorios, tableros de medición y análisis de
+                impacto.
+          \item \emph{Para el efecto de la IA generativa (PE6):} análisis de
+                sensibilidad comparado (modelo con y sin criterios de IA) y
+                encuesta complementaria al panel Delphi sobre su percepción
+                del impacto de los asistentes de código en la relevancia de
+                criterios organizacionales.
+        \end{itemize}
+
+  \item \textbf{Instrumentos de investigación.} Cuestionarios estructurados
+        para expertos, guías de entrevista semiestructurada, matrices de
+        evaluación comparativa, plantillas de documentación de procesos,
+        herramientas de análisis cuantitativo y cualitativo, y frameworks de
+        medición de indicadores.
+
+  \item \textbf{Población y muestra.} Población: instituciones bancarias con
+        necesidades de selección de tecnologías de interfaz de usuario.
+        Muestra: selección estratificada de instituciones de diferentes
+        tamaños y tipos (banca comercial, inversión, etc.). Muestreo no
+        probabilístico por conveniencia y juicio de expertos.
+
+  \item \textbf{Análisis de datos.} Análisis cualitativo mediante codificación
+        temática para entrevistas y feedback; análisis cuantitativo mediante
+        estadística descriptiva e inferencial para validación de la efectividad;
+        triangulación metodológica para asegurar la validez de los hallazgos.
+
+  \item \textbf{Estructura de la metodología a proponer.} La metodología final
+        se estructura como:
+        \begin{enumerate}[label=(\alph*)]
+          \item Marco de categorización de criterios técnicos y regulatorios,
+                incluyendo criterios emergentes asociados a la IA generativa.
+          \item Instrumentos de evaluación cuantitativa y cualitativa.
+          \item Proceso estructurado de toma de decisiones que integre
+                coherentemente las dimensiones técnica y regulatoria.
+          \item Sistema de indicadores técnicos y regulatorios para medir el
+                éxito de la selección tecnológica.
+          \item Guía de implementación para instituciones bancarias.
+        \end{enumerate}
+\end{enumerate}

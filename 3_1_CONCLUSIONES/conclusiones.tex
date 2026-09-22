@@ -1,0 +1,111 @@
+\chapter*{Conclusiones}
+\addcontentsline{toc}{chapter}{Conclusiones}
+
+\begin{enumerate}
+  \item Se identificó y categorizó un conjunto de 10 criterios críticos para
+        la evaluación de tecnologías de interfaz de usuario en el sector
+        bancario, organizados en dos dimensiones: técnica (60\% del peso
+        total: seguridad, rendimiento, mantenibilidad, calidad del código
+        generado por IA, accesibilidad y compatibilidad) y regulatoria
+        (40\%: cumplimiento normativo, integración con sistemas legacy,
+        alta disponibilidad y gobernanza del uso de IA generativa). A
+        diferencia de una primera versión de este modelo, los factores
+        organizacionales (ecosistema, talento, alineación estratégica) se
+        excluyeron deliberadamente de la ponderación, por las razones
+        expuestas en la conclusión 6. Esta reorganización confirma que las
+        metodologías genéricas de evaluación tecnológica son
+        estructuralmente insuficientes para el sector financiero al no
+        contemplar con la especificidad requerida ni las exigencias
+        regulatorias ni los criterios emergentes asociados a la IA
+        generativa.
+
+  \item Los instrumentos metodológicos diseñados --matriz de ponderación AHP
+        con validación mediante Técnica Delphi, scorecard técnico comparativo
+        y rúbricas de evaluación cuantitativa-- demostraron consistencia
+        inter-evaluador con razón de consistencia $CR = 0.06$. La
+        objetividad del proceso se incrementó significativamente respecto a
+        evaluaciones previas ad hoc de la institución estudiada, eliminando
+        la variabilidad subjetiva entre departamentos documentada en el
+        diagnóstico inicial y garantizando la trazabilidad de cada decisión
+        de ponderación.
+
+  \item El proceso estructurado de toma de decisiones de cuatro fases
+        --rediseñado para centrarse exclusivamente en las dimensiones
+        técnica y regulatoria, con la Fase 3 redefinida como
+        ``Evaluación Regulatoria y de Gobernanza de IA''-- integró
+        efectivamente ambas dimensiones en un flujo decisional coherente,
+        sin requerir un rol dedicado a la validación estratégica de
+        negocio. La participación coordinada de arquitectos empresariales,
+        equipos de seguridad y oficiales de cumplimiento redujo los
+        patrones de fragmentación decisional identificados en la revisión
+        de literatura.
+
+  \item La validación empírica en el caso de estudio --una institución
+        bancaria mediana peruana con 20 profesionales de desarrollo
+        organizados bajo metodología Scrum, con adopción incipiente de
+        asistentes de código IA en el 60\% del equipo, y cerca de medio
+        millón de cuentas activas-- confirmó la aplicabilidad práctica de la
+        metodología propuesta. Angular obtuvo la puntuación ponderada más
+        alta ($S = 8.84$) sobre React ($S = 7.83$) y Vue.js ($S = 7.56$),
+        siendo seleccionado formalmente por el Comité de Arquitectura
+        Tecnológica. Las fortalezas de Angular en seguridad nativa,
+        mantenibilidad, cumplimiento regulatorio y --de manera
+        determinante-- en la calidad y gobernanza del código asistido por
+        IA, resultaron decisivas.
+
+  \item El sistema de indicadores técnicos y regulatorios desarrollado
+        permite establecer una línea base mensurable para el seguimiento
+        post-implementación de la decisión tecnológica, con mayor
+        sensibilidad a las particularidades del contexto bancario que las
+        métricas genéricas de proyectos tecnológicos.
+
+  \item La consolidación de herramientas de Inteligencia Artificial
+        generativa aplicadas al desarrollo de software no es un factor
+        marginal, sino la variable que justifica el propio alcance de esta
+        investigación. El análisis de sensibilidad comparado (Tabla
+        \ref{tab:4.2}, escenarios S0 vs. S3) mostró que incorporar los
+        criterios de calidad y gobernanza de IA \emph{amplía} la ventaja de
+        Angular sobre React en 0.10 puntos (de $\Delta S = 0.91$ sin dichos
+        criterios a $\Delta S = 1.01$ con ellos), confirmando la Hipótesis
+        Específica 6: la disponibilidad de asistentes de código basados en
+        IA reduce la relevancia relativa de los criterios organizacionales
+        que antes favorecían a frameworks con mayor ecosistema y talento
+        disponible (como React), reforzando en cambio la preferencia por
+        frameworks tipados y opinionados como Angular, cuya arquitectura
+        produce código IA-asistido más consistente, auditable y
+        conforme con las exigencias de trazabilidad regulatoria del sector
+        bancario. En consecuencia, la emergencia de la IA generativa no
+        elimina la necesidad de un proceso de selección tecnológica
+        riguroso: reconfigura sus criterios decisivos hacia lo técnico y lo
+        regulatorio, exactamente el alcance que da nombre a esta tesis.
+\end{enumerate}
+
+\section*{Líneas de investigación futura}
+
+La presente investigación abre al menos tres líneas de trabajo que pueden
+enriquecer y extender la metodología propuesta:
+
+\begin{itemize}
+  \item \textbf{Actualización de pesos ante la adopción masiva de IA
+        generativa.} Aplicar una nueva ronda Delphi con el mismo panel de
+        expertos en el horizonte 2027--2028 para medir cómo la
+        generalización de asistentes de código (Copilot, Cursor y
+        equivalentes) modifica la valoración de los criterios de calidad y
+        gobernanza de IA, y determinar si el ranking Angular $>$ React $>$
+        Vue.js se mantiene bajo esa nueva distribución de pesos.
+
+  \item \textbf{Extensión a arquitecturas de micro-frontends.} La
+        metodología fue diseñada para la selección de un único framework
+        base. Su adaptación a escenarios de micro-frontends --donde
+        distintos equipos pueden emplear frameworks diferentes dentro de
+        una misma plataforma-- requiere incorporar criterios técnicos
+        adicionales de interoperabilidad que no fueron contemplados en el
+        presente estudio.
+
+  \item \textbf{Validación en instituciones bancarias de mayor escala.} El
+        caso de estudio corresponde a una institución mediana con 20
+        profesionales de desarrollo. Aplicar la metodología en un banco de
+        primer piso con equipos de desarrollo superiores a 200 personas y
+        mayor madurez en la adopción de IA generativa permitiría verificar
+        si los pesos AHP y el ranking de frameworks se mantienen estables.
+\end{itemize}

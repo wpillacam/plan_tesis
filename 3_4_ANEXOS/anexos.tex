@@ -1,0 +1,249 @@
+\chapter*{Anexos}
+\addcontentsline{toc}{chapter}{Anexos}
+
+\section*{Anexo A: Instrumento de Consenso Delphi}
+
+El cuestionario siguiente fue aplicado en dos rondas Delphi a un panel de 12
+expertos del sector bancario peruano (arquitectos de software, líderes
+técnicos y oficiales de cumplimiento). La primera ronda consensuó los
+criterios técnicos y regulatorios clásicos; la segunda ronda incorporó
+específicamente los dos criterios emergentes asociados a la generación de
+código asistida por Inteligencia Artificial. El objetivo fue consensuar los
+criterios de evaluación y sus pesos relativos para la selección de
+frameworks de interfaz de usuario en instituciones financieras reguladas.
+
+\subsection*{Escala de valoración}
+
+\begin{center}
+\begin{tabular}{@{}cp{10cm}@{}}
+\toprule
+Valor & Significado \\
+\midrule
+1 & Sin relevancia para el entorno bancario \\
+2 & Relevancia baja \\
+3 & Relevancia moderada \\
+4 & Relevancia alta \\
+5 & Relevancia crítica --- factor determinante en la selección \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Sección I --- Criterios técnicos}
+
+\begin{center}
+\small
+\begin{tabular}{@{}cp{2.8cm}p{8cm}c@{}}
+\toprule
+N.\textsuperscript{o} & Criterio & Descripción para el contexto bancario & Valor (1--5) \\
+\midrule
+1 & Seguridad intrínseca & Mecanismos nativos contra XSS, CSRF y vulnerabilidades OWASP Top 10 sin configuración adicional & \\
+2 & Rendimiento de carga & Métricas Core Web Vitals (LCP $\leq$ 2.5\,s, INP $\leq$ 200\,ms, CLS $\leq$ 0.1) en canales digitales con tráfico pico & \\
+3 & Mantenibilidad & Facilidad de refactorización, cobertura de pruebas automatizadas y ciclos de actualización & \\
+4 & Calidad del código IA & Consistencia arquitectónica y auditabilidad de las sugerencias de asistentes de código (Copilot, Cursor) & \\
+5 & Accesibilidad & Conformidad nativa con WCAG 2.2 nivel AA sin librerías de terceros & \\
+6 & Compatibilidad multiplataforma & Consistencia cross-browser y omnicanal (web, móvil, cajeros) sin degradación de funcionalidad & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Sección II --- Criterios normativos y de cumplimiento}
+
+\begin{center}
+\small
+\begin{tabular}{@{}cp{2.8cm}p{8cm}c@{}}
+\toprule
+N.\textsuperscript{o} & Criterio & Descripción para el contexto bancario & Valor (1--5) \\
+\midrule
+7 & Cumplimiento PCI-DSS & Facilidad de implementar controles del estándar PCI-DSS v4.0 en la capa de presentación & \\
+8 & Integración legacy & Adaptabilidad a arquitecturas core bancarias de 15+ años de antigüedad & \\
+9 & SLA y disponibilidad & Capacidad para sostener disponibilidad $\geq$ 99.9\% con picos de tráfico de 15$\times$ la línea base & \\
+10 & Gobernanza de IA & Trazabilidad, riesgo de propiedad intelectual y auditabilidad regulatoria del código generado por asistentes de IA & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Criterios adicionales sugeridos por el experto}
+
+\noindent\hrulefill
+
+\vspace{0.3cm}
+\noindent\hrulefill
+
+\subsection*{Perfil del experto}
+
+\begin{center}
+\begin{tabular}{@{}p{5cm}p{7cm}@{}}
+\toprule
+Años de experiencia en banca: & \makebox[7cm]{\hrulefill} \\[0.4cm]
+Rol actual: & \makebox[7cm]{\hrulefill} \\[0.4cm]
+Frameworks de interfaz de usuario que conoce: & \makebox[7cm]{\hrulefill} \\[0.4cm]
+¿Utiliza asistentes de código basados en IA? & \makebox[7cm]{\hrulefill} \\[0.4cm]
+Institución (opcional): & \makebox[7cm]{\hrulefill} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Anexo B: Pesos AHP y Evaluación Detallada del Caso de Estudio}
+
+\subsection*{B.1 Vector de prioridades derivado del proceso AHP}
+
+La Tabla \ref{tab:4.6} presenta los pesos normalizados obtenidos tras aplicar
+el Proceso Analítico Jerárquico (AHP) con la participación del panel de
+expertos, incluida la segunda ronda Delphi que incorporó los criterios de IA
+generativa. La razón de consistencia calculada fue $CR = 0.06 \leq 0.10$,
+confirmando la validez de los juicios de comparación.
+
+\begin{table}[htbp]
+\centering
+\caption{Vector de prioridades AHP --- Caso de estudio banco peruano mediano}
+\label{tab:4.6}
+\small
+\begin{tabular}{@{}clcc@{}}
+\toprule
+N.\textsuperscript{o} & Criterio ($C_i$) & Peso $w_i$ & Porcentaje \\
+\midrule
+1  & Seguridad intrínseca          & 0.16 & 16.0\% \\
+2  & Rendimiento de carga          & 0.13 & 13.0\% \\
+3  & Mantenibilidad                & 0.13 & 13.0\% \\
+4  & Calidad del código IA         & 0.08 & 8.0\%  \\
+5  & Accesibilidad WCAG            & 0.06 & 6.0\%  \\
+6  & Compatibilidad cross-browser  & 0.04 & 4.0\%  \\
+7  & Cumplimiento PCI-DSS          & 0.16 & 16.0\% \\
+8  & Integración legacy            & 0.12 & 12.0\% \\
+9  & SLA y disponibilidad          & 0.06 & 6.0\%  \\
+10 & Gobernanza regulatoria de IA  & 0.06 & 6.0\%  \\
+\midrule
+\textbf{Total} & & \textbf{1.00} & \textbf{100\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{B.2 Calificaciones por criterio y puntuaciones ponderadas}
+
+La Tabla \ref{tab:4.7} detalla las calificaciones $r_{fi}$ asignadas a cada
+framework en escala $[0,10]$ y la contribución ponderada $w_i \cdot r_{fi}$ de
+cada criterio a la puntuación global $S_f$.
+
+\begin{table}[htbp]
+\centering
+\caption{Calificaciones y contribuciones ponderadas por criterio}
+\label{tab:4.7}
+\scriptsize
+\begin{tabular}{@{}clc cc cc cc@{}}
+\toprule
+& & & \multicolumn{2}{c}{Angular} & \multicolumn{2}{c}{React} & \multicolumn{2}{c}{Vue.js} \\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+N.\textsuperscript{o} & Criterio & $w_i$ & $r_{fi}$ & $w_i r_{fi}$ & $r_{fi}$ & $w_i r_{fi}$ & $r_{fi}$ & $w_i r_{fi}$ \\
+\midrule
+1  & Seguridad intrínseca         & 0.16 & 9.2 & 1.472 & 7.8 & 1.248 & 7.5 & 1.20 \\
+2  & Rendimiento                  & 0.13 & 8.5 & 1.105 & 8.8 & 1.144 & 8.0 & 1.04 \\
+3  & Mantenibilidad               & 0.13 & 9.0 & 1.170 & 7.5 & 0.975 & 7.8 & 1.014 \\
+4  & Calidad del código IA        & 0.08 & 9.0 & 0.720 & 7.0 & 0.560 & 7.5 & 0.60 \\
+5  & Accesibilidad WCAG           & 0.06 & 8.5 & 0.510 & 8.0 & 0.480 & 8.2 & 0.492 \\
+6  & Compat. cross-browser        & 0.04 & 8.0 & 0.320 & 8.5 & 0.340 & 8.0 & 0.32 \\
+7  & Cumplimiento PCI-DSS         & 0.16 & 9.0 & 1.440 & 7.5 & 1.200 & 7.0 & 1.12 \\
+8  & Integración legacy           & 0.12 & 8.8 & 1.056 & 7.8 & 0.936 & 7.2 & 0.864 \\
+9  & SLA y disponibilidad         & 0.06 & 8.7 & 0.522 & 8.2 & 0.492 & 7.8 & 0.468 \\
+10 & Gobernanza de IA             & 0.06 & 8.8 & 0.528 & 7.6 & 0.456 & 7.3 & 0.438 \\
+\midrule
+\multicolumn{3}{r}{\textbf{Puntuación global $S_f$}} & \multicolumn{2}{c}{\textbf{8.84}} & \multicolumn{2}{c}{\textbf{7.83}} & \multicolumn{2}{c}{\textbf{7.56}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent \textit{Nota:} los valores $r_{fi}$ fueron asignados por el equipo
+técnico del caso de estudio (12 líderes técnicos y 3 oficiales de
+cumplimiento) mediante evaluación directa de cada framework en el entorno de
+la institución bancaria estudiada, incluyendo la revisión de código generado
+por asistentes de IA durante la Fase 2. La puntuación global $S_f =
+\sum_{i=1}^{10} w_i \cdot r_{fi}$ sitúa a Angular como la opción óptima para
+el proceso de modernización de los canales digitales de la institución.
+
+\section*{Anexo C: Tablas de Referencia para el Proceso AHP}
+
+\subsection*{C.1 Escala fundamental de comparación de Saaty}
+
+La Tabla \ref{tab:4.8} presenta la escala de comparación pareada propuesta
+por Saaty (1980), empleada en la Fase 2 de la metodología para asignar los
+juicios de importancia relativa entre criterios.
+
+\begin{table}[htbp]
+\centering
+\caption{Escala fundamental de Saaty para comparaciones pareadas}
+\label{tab:4.8}
+\small
+\begin{tabular}{@{}cp{4cm}p{6.5cm}@{}}
+\toprule
+Valor $a_{ij}$ & Significado & Ejemplo de aplicación \\
+\midrule
+1         & Igual importancia          & Dos criterios contribuyen de igual manera al objetivo \\
+3         & Importancia moderada       & Un criterio es ligeramente más importante que el otro \\
+5         & Importancia fuerte         & Un criterio es claramente más importante que el otro \\
+7         & Importancia muy fuerte     & Un criterio es dominante sobre el otro \\
+9         & Importancia extrema        & La superioridad de un criterio es absoluta y evidente \\
+2, 4, 6, 8 & Valores intermedios        & Compromisos entre juicios adyacentes \\
+Recíprocos & $a_{ji} = 1/a_{ij}$        & Criterio $j$ comparado con criterio $i$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection*{C.2 Índice de Consistencia Aleatoria ($RI_n$)}
+
+La Tabla \ref{tab:4.9} presenta los valores tabulados del Índice de
+Consistencia Aleatoria $RI_n$ para matrices de orden $n$, utilizados en el
+cálculo de la Razón de Consistencia $CR = CI/RI_n$, donde $CI = (\lambda_{
+\text{máx}} - n)/(n-1)$. Se considera aceptable un modelo AHP cuando $CR
+\leq 0.10$ (Saaty, 1980).
+
+\begin{table}[htbp]
+\centering
+\caption{Índice de Consistencia Aleatoria tabulado $RI_n$}
+\label{tab:4.9}
+\small
+\begin{tabular}{@{}c*{9}{c}@{}}
+\toprule
+$n$   & 2    & 3    & 4    & 5    & 6    & 7    & 8    & 9    & 10 \\
+\midrule
+$RI_n$ & 0.00 & 0.58 & 0.90 & 1.12 & 1.24 & 1.32 & 1.41 & 1.45 & 1.49 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Para el caso de estudio presentado en esta tesis ($n = 10$ criterios), se
+utilizó $RI_{10} = 1.49$, obteniéndose $CR = 0.06$, valor que confirma la
+consistencia de los juicios del panel de expertos.
+
+\subsection*{C.3 Plantilla de evaluación por criterio}
+
+La Tabla \ref{tab:4.10} presenta la evaluación completa del caso de estudio
+aplicado en la institución bancaria peruana, con los pesos $w_i$
+consensuados por el panel Delphi y las calificaciones $r_{fi} \in [0,10]$
+asignadas por el Comité Evaluador para cada combinación framework--criterio.
+La puntuación global se calcula como $S_f = \sum_{i=1}^{10} w_i \cdot
+r_{fi}$. La tabla es replicable en cualquier institución bancaria
+sustituyendo los valores de $w_i$ y $r_{fi}$ según su contexto específico.
+
+\begin{table}[htbp]
+\centering
+\caption{Plantilla de evaluación --- caso de estudio (Angular, React y Vue.js)}
+\label{tab:4.10}
+\small
+\begin{tabular}{@{}clcccc@{}}
+\toprule
+N.\textsuperscript{o} & Criterio & $w_i$ & Angular & React & Vue.js \\
+\midrule
+1  & Seguridad intrínseca         & 0.16 & 9.2 & 7.8 & 7.5 \\
+2  & Rendimiento de carga         & 0.13 & 8.5 & 8.8 & 8.0 \\
+3  & Mantenibilidad               & 0.13 & 9.0 & 7.5 & 7.8 \\
+4  & Calidad del código IA        & 0.08 & 9.0 & 7.0 & 7.5 \\
+5  & Accesibilidad WCAG           & 0.06 & 8.5 & 8.0 & 8.2 \\
+6  & Compat. cross-browser        & 0.04 & 8.0 & 8.5 & 8.0 \\
+7  & Cumplimiento PCI-DSS         & 0.16 & 9.0 & 7.5 & 7.0 \\
+8  & Integración legacy           & 0.12 & 8.8 & 7.8 & 7.2 \\
+9  & SLA y disponibilidad         & 0.06 & 8.7 & 8.2 & 7.8 \\
+10 & Gobernanza de IA             & 0.06 & 8.8 & 7.6 & 7.3 \\
+\midrule
+\textbf{Puntuación global $S_f$} & \textbf{1.00} & \textbf{8.84} & \textbf{7.83} & \textbf{7.56} \\
+\bottomrule
+\end{tabular}
+\end{table}
