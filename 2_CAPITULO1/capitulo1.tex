@@ -508,60 +508,11 @@ La metodología seguida para el desarrollo de la presente tesis es la siguiente:
 
 \subsection{Variables de estudio}
 
-
-\begin{table}[htbp]
-\centering
-\caption{Operacionalización de variables}
-\label{tab:1.2}
-\small
-\begin{tabular}{@{}p{1cm}p{3.6cm}p{3.6cm}p{4.2cm}@{}}
-\toprule
-Hip. & Variables & Indicadores & Instrumentos de medición \\
-\midrule
-H1 & VI: Aplicación de criterios técnicos y regulatorios bancarios \newline
-     VD: Precisión en valoración de idoneidad
-   & Grado de alineación entre características y requisitos \newline
-     Nivel de satisfacción de stakeholders
-   & Matriz de trazabilidad requisitos-características \newline
-     Encuestas de satisfacción a stakeholders \\
-\addlinespace
-H2 & VI: Utilización de instrumentos metodológicos especializados \newline
-     VD: Objetividad, reproducibilidad y transparencia
-   & Consistencia entre evaluadores \newline
-     Trazabilidad de decisiones
-   & Test de concordancia inter-evaluadores \newline
-     Auditoría de trazabilidad decisional \\
-\addlinespace
-H3 & VI: Proceso decisional técnico-regulatorio estructurado \newline
-     VD: Calidad de integración de consideraciones
-   & Tiempo para decisiones \newline
-     Participación cross-funcional
-   & Registro de tiempos decisionales \newline
-     Análisis de participación por área \\
-\addlinespace
-H4 & VI: Aplicación de metodología en caso real \newline
-     VD: Efectividad práctica y aplicabilidad
-   & Comparativa pre/post implementación \newline
-     Adherencia metodológica
-   & Análisis comparativo de resultados \newline
-     Lista de verificación de cumplimiento metodológico \\
-\addlinespace
-H5 & VI: Sistema de indicadores técnicos y regulatorios \newline
-     VD: Precisión en medición de impactos
-   & Sensibilidad y especificidad de métricas \newline
-     Correlación indicadores-resultados
-   & Análisis de sensibilidad y especificidad \newline
-     Estudios de correlación estadística \\
-\addlinespace
-H6 & VI: Adopción de herramientas de IA generativa en desarrollo \newline
-     VD: Relevancia relativa de criterios técnicos-regulatorios
-   & Variación de $\Delta S$ con/sin criterios de IA \newline
-     Proporción del peso Delphi técnico-regulatorio
-   & Análisis de sensibilidad comparado (sección 4.3) \newline
-     Encuesta al panel Delphi sobre percepción del impacto de IA \\
-\bottomrule
-\end{tabular}
-\end{table}
+Las variables independientes y dependientes de cada hipótesis, junto con sus
+indicadores y los instrumentos de medición asociados, se presentan integrados
+por hipótesis en la matriz de consistencia (sección 1.8), de modo que la
+correspondencia problema--objetivo--hipótesis--variable--indicador--método
+quede trazada en un solo instrumento.
 
 
 \subsection{Técnicas e instrumentos de recolección de datos}
@@ -618,21 +569,23 @@ H6 & VI: Adopción de herramientas de IA generativa en desarrollo \newline
 
 \section{MATRIZ DE CONSISTENCIA}
 
-
-\small
-\begin{longtable}{@{}p{4cm}p{4cm}p{4.5cm}@{}}
-\caption{Matriz de Consistencia}\label{tab:1.3}\\
+\begin{landscape}
+\newgeometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\begin{spacing}{1}
+\footnotesize
+\begin{longtable}{@{}p{3.9cm}p{3.9cm}p{3.9cm}p{3.95cm}p{3.95cm}p{3.95cm}@{}}
+\caption{Matriz de Consistencia}\label{tab:1.2}\\
 \toprule
-Problemas & Objetivos & Hipótesis \\
+Problemas & Objetivos & Hipótesis & Variables & Indicadores & Metodología \\
 \midrule
 \endfirsthead
-\multicolumn{3}{l}{\small\itshape (Tabla \ref{tab:1.3} -- continuación)}\\
+\multicolumn{6}{l}{\small\itshape (Tabla \ref{tab:1.2} -- continuación)}\\
 \toprule
-Problemas & Objetivos & Hipótesis \\
+Problemas & Objetivos & Hipótesis & Variables & Indicadores & Metodología \\
 \midrule
 \endhead
 \midrule
-\multicolumn{3}{r}{\small\itshape Continúa en la página siguiente}\\
+\multicolumn{6}{r}{\small\itshape Continúa en la página siguiente}\\
 \endfoot
 \bottomrule
 \endlastfoot
@@ -650,7 +603,17 @@ técnicos y regulatorios, coherente con el contexto de IA generativa, resulta
 en decisiones tecnológicas significativamente más alineadas con los
 requisitos particulares de las entidades financieras, en comparación con
 enfoques genéricos o centrados predominantemente en factores
-organizacionales. \\
+organizacionales.
+&
+VI: Metodología técnico-regulatoria de selección \newline
+VD: Calidad de la decisión tecnológica
+&
+Alineación con requisitos técnicos y normativos \newline
+Robustez de la decisión ($\Delta S$)
+&
+Enfoque mixto con triangulación metodológica \newline
+Delphi + AHP \newline
+Caso de estudio \\
 \addlinespace
 PE1: ¿Qué criterios técnicos y regulatorios específicos del sector bancario
 deben ser incorporados en la evaluación?
@@ -660,7 +623,16 @@ del sector bancario para la evaluación de tecnologías de interfaz de usuario.
 &
 HE1: La identificación y ponderación sistemática de criterios técnicos y
 regulatorios permite una valoración más precisa de la idoneidad de
-frameworks. \\
+frameworks.
+&
+VI: Aplicación de criterios técnicos y regulatorios bancarios \newline
+VD: Precisión en valoración de idoneidad
+&
+Grado de alineación entre características y requisitos \newline
+Nivel de satisfacción de stakeholders
+&
+Matriz de trazabilidad requisitos-características \newline
+Encuestas de satisfacción a stakeholders \\
 \addlinespace
 PE2: ¿Qué instrumentos metodológicos permiten cuantificar objetivamente la
 idoneidad de diferentes frameworks?
@@ -669,7 +641,16 @@ OE2: Diseñar instrumentos metodológicos cuantitativos y cualitativos para
 evaluación comparativa objetiva.
 &
 HE2: La utilización de instrumentos metodológicos especializados incrementa
-significativamente la objetividad, reproducibilidad y transparencia. \\
+significativamente la objetividad, reproducibilidad y transparencia.
+&
+VI: Utilización de instrumentos metodológicos especializados \newline
+VD: Objetividad, reproducibilidad y transparencia
+&
+Consistencia entre evaluadores \newline
+Trazabilidad de decisiones
+&
+Test de concordancia inter-evaluadores \newline
+Auditoría de trazabilidad decisional \\
 \addlinespace
 PE3: ¿Qué proceso estructurado de toma de decisiones integra
 coherentemente las dimensiones técnica y regulatoria?
@@ -679,7 +660,16 @@ las dimensiones técnica y regulatoria.
 &
 HE3: La implementación de un proceso decisional estructurado
 técnico-regulatorio optimiza la integración de consideraciones frente a
-aproximaciones fragmentadas. \\
+aproximaciones fragmentadas.
+&
+VI: Proceso decisional técnico-regulatorio estructurado \newline
+VD: Calidad de integración de consideraciones
+&
+Tiempo para decisiones \newline
+Participación cross-funcional
+&
+Registro de tiempos decisionales \newline
+Análisis de participación por área \\
 \addlinespace
 PE4: ¿Cómo puede validarse empíricamente la efectividad de la metodología
 propuesta?
@@ -688,7 +678,16 @@ OE4: Implementar y validar la metodología propuesta mediante caso de
 estudio real.
 &
 HE4: La validación empírica mediante caso de estudio demuestra efectividad
-práctica y aplicabilidad. \\
+práctica y aplicabilidad.
+&
+VI: Aplicación de metodología en caso real \newline
+VD: Efectividad práctica y aplicabilidad
+&
+Comparativa pre/post implementación \newline
+Adherencia metodológica
+&
+Análisis comparativo de resultados \newline
+Lista de verificación de cumplimiento metodológico \\
 \addlinespace
 PE5: ¿Qué indicadores permiten medir objetivamente el éxito de una
 selección tecnológica de interfaz de usuario?
@@ -697,7 +696,16 @@ OE5: Desarrollar un sistema de indicadores técnicos y regulatorios para
 evaluar el éxito de la selección tecnológica.
 &
 HE5: El sistema de indicadores técnicos y regulatorios permite medir con
-mayor precisión el impacto técnico y de cumplimiento normativo. \\
+mayor precisión el impacto técnico y de cumplimiento normativo.
+&
+VI: Sistema de indicadores técnicos y regulatorios \newline
+VD: Precisión en medición de impactos
+&
+Sensibilidad y especificidad de métricas \newline
+Correlación indicadores-resultados
+&
+Análisis de sensibilidad y especificidad \newline
+Estudios de correlación estadística \\
 \addlinespace
 PE6: ¿De qué manera la disponibilidad de herramientas de IA generativa
 modifica la relevancia relativa de los criterios técnicos y regulatorios frente
@@ -710,7 +718,19 @@ frente a los organizacionales.
 HE6: La disponibilidad de herramientas de IA generativa reduce la
 relevancia relativa de los criterios organizacionales frente a los técnicos y
 regulatorios, sin alterar la preferencia por frameworks tipados y
-opinionados. \\
+opinionados.
+&
+VI: Adopción de herramientas de IA generativa en desarrollo \newline
+VD: Relevancia relativa de criterios técnicos-regulatorios
+&
+Variación de $\Delta S$ con/sin criterios de IA \newline
+Proporción del peso Delphi técnico-regulatorio
+&
+Análisis de sensibilidad comparado (sección 4.3) \newline
+Encuesta al panel Delphi sobre percepción del impacto de IA \\
 \end{longtable}
 \normalsize
+\end{spacing}
+\restoregeometry
+\end{landscape}
 
