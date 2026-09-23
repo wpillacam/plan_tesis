@@ -569,16 +569,34 @@ quede trazada en un solo instrumento.
 
 \section{MATRIZ DE CONSISTENCIA}
 
+\newgeometry{top=1.5cm,bottom=1.5cm,left=2cm,right=2cm}
+\pagestyle{empty}
+\AddToShipoutPictureFG{%
+  \AtPageUpperLeft{%
+    \put(\LenToUnit{19cm},\LenToUnit{-2cm}){\makebox(0,0){\rotatebox{90}{\small\thepage}}}%
+  }%
+}
 \begin{landscape}
-\newgeometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\makeatletter
 \begin{spacing}{1}
 \footnotesize
-\begin{longtable}{@{}p{3.9cm}p{3.9cm}p{3.9cm}p{3.95cm}p{3.95cm}p{3.95cm}@{}}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{@{}p{4.1cm}p{4.1cm}p{4.1cm}p{4.1cm}p{4.1cm}p{4.1cm}@{}}
+\multicolumn{4}{@{}l@{}}{\textit{\scriptsize UNIVERSIDAD NACIONAL DE INGENIERÍA}} &
+\multicolumn{2}{@{}r@{}}{\textit{\scriptsize \leftmark}} \\[-2pt]
+\multicolumn{4}{@{}l@{}}{\textit{\scriptsize \@facultad}} &
+\multicolumn{2}{@{}r@{}}{} \\
+\multicolumn{6}{@{}p{24.6cm}@{}}{\hrulefill}\\[2pt]
 \caption{Matriz de Consistencia}\label{tab:1.2}\\
 \toprule
 Problemas & Objetivos & Hipótesis & Variables & Indicadores & Metodología \\
 \midrule
 \endfirsthead
+\multicolumn{4}{@{}l@{}}{\textit{\scriptsize UNIVERSIDAD NACIONAL DE INGENIERÍA}} &
+\multicolumn{2}{@{}r@{}}{\textit{\scriptsize \leftmark}} \\[-2pt]
+\multicolumn{4}{@{}l@{}}{\textit{\scriptsize \@facultad}} &
+\multicolumn{2}{@{}r@{}}{} \\
+\multicolumn{6}{@{}p{24.6cm}@{}}{\hrulefill}\\[2pt]
 \multicolumn{6}{l}{\small\itshape (Tabla \ref{tab:1.2} -- continuación)}\\
 \toprule
 Problemas & Objetivos & Hipótesis & Variables & Indicadores & Metodología \\
@@ -586,8 +604,19 @@ Problemas & Objetivos & Hipótesis & Variables & Indicadores & Metodología \\
 \endhead
 \midrule
 \multicolumn{6}{r}{\small\itshape Continúa en la página siguiente}\\
+\bottomrule
+\multicolumn{6}{@{}p{24.6cm}@{}}{\hrulefill}\\[2pt]
+\multicolumn{4}{@{}l@{}}{\textit{\scriptsize \@title}} &
+\multicolumn{2}{@{}r@{}}{} \\[-2pt]
+\multicolumn{4}{@{}l@{}}{\textit{\scriptsize Bach.\ \@author}} &
+\multicolumn{2}{@{}r@{}}{} \\
 \endfoot
 \bottomrule
+\multicolumn{6}{@{}p{24.6cm}@{}}{\hrulefill}\\[2pt]
+\multicolumn{4}{@{}l@{}}{\textit{\scriptsize \@title}} &
+\multicolumn{2}{@{}r@{}}{} \\[-2pt]
+\multicolumn{4}{@{}l@{}}{\textit{\scriptsize Bach.\ \@author}} &
+\multicolumn{2}{@{}r@{}}{} \\
 \endlastfoot
 PG: ¿De qué manera puede desarrollarse una metodología basada en criterios
 técnicos y regulatorios para la selección de tecnologías de interfaz de
@@ -729,8 +758,12 @@ Proporción del peso Delphi técnico-regulatorio
 Análisis de sensibilidad comparado (sección 4.3) \newline
 Encuesta al panel Delphi sobre percepción del impacto de IA \\
 \end{longtable}
+\setlength{\tabcolsep}{6pt}
 \normalsize
 \end{spacing}
-\restoregeometry
+\makeatother
 \end{landscape}
+\ClearShipoutPictureFG
+\pagestyle{fancy}
+\restoregeometry
 
